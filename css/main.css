@@ -411,7 +411,7 @@ a {
 .hero__subtitle {
   max-width: 33.125rem;
   font-size: 1.25rem;
-  margin-bottom: 4.375rem;
+  margin-bottom: 3.75rem;
 }
 .hero__buttons-block {
   display: -webkit-box;
@@ -1336,7 +1336,8 @@ a {
   margin-bottom: 1rem;
 }
 .popup-big,
-.popup-consult {
+.popup-consult,
+.popup-emergency {
   display: none;
   position: fixed;
   -webkit-box-pack: center;
@@ -1351,12 +1352,13 @@ a {
   height: 100%;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-  padding-top: 5%;
+  padding-top: 10%;
   z-index: 400;
   background-color: rgba(0, 0, 0, 0.5);
 }
 .popup-big__content,
-.popup-consult__content {
+.popup-consult__content,
+.popup-emergency__content {
   position: relative;
   -ms-flex-preferred-size: 37.5rem;
   flex-basis: 37.5rem;
@@ -1372,6 +1374,9 @@ a {
   color: var(--light-color);
   border: none;
   background: 0 0;
+}
+.popup-big {
+  padding-top: 2%;
 }
 .popup-form {
   padding: 1.25rem 3.125rem;
