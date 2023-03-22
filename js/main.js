@@ -609,6 +609,31 @@
       755: () => {
         console.log('components-OK');
       },
+      864: () => {
+        const e = document.querySelector('.submenu__items');
+        let t,
+          i,
+          n = !1;
+        e.addEventListener('mousedown', (a) => {
+          a.preventDefault(),
+            (n = !0),
+            e.classList.add('active'),
+            (t = a.pageX - e.offsetLeft),
+            (i = e.scrollLeft);
+        }),
+          e.addEventListener('mouseleave', () => {
+            (n = !1), e.classList.remove('active');
+          }),
+          e.addEventListener('mouseup', () => {
+            (n = !1), e.classList.remove('active');
+          }),
+          e.addEventListener('mousemove', (a) => {
+            if (!n) return;
+            a.preventDefault();
+            const r = 3 * (a.pageX - e.offsetLeft - t);
+            e.scrollLeft = i - r;
+          });
+      },
       598: () => {
         function e(e) {
           var t = !0,
@@ -2271,7 +2296,7 @@
                                 if (void 0 !== e) {
                                   if (n) {
                                     var o = _(t).lastIndex,
-                                      s = M(i.index, t);
+                                      s = P(i.index, t);
                                     (_(t).lastIndex = o),
                                       (r = e.slice(0, e.indexOf(s.nextMatch[0])));
                                   } else r = e.slice(0, a.length);
@@ -2620,7 +2645,7 @@
                     )
                       return t;
                     if ('29' == e.day) {
-                      var n = M(t.pos, i);
+                      var n = P(t.pos, i);
                       if ('yyyy' === n.targetMatch[0] && t.pos - n.targetMatchIndex == 2)
                         return (t.remove = t.pos + 1), t;
                     } else if ('02' == e.month && '30' == e.day && void 0 !== t.c)
@@ -2676,10 +2701,10 @@
                       ? e
                       : void 0;
                   }
-                  function P(e, t) {
+                  function L(e, t) {
                     return x(t.inputFormat, { date: e }, t);
                   }
-                  function M(e, t) {
+                  function P(e, t) {
                     var i,
                       n,
                       a = 0,
@@ -2768,7 +2793,7 @@
                       preValidation: function (e, t, i, n, a, r, o, s) {
                         if (s) return !0;
                         if (isNaN(i) && e[t] !== i) {
-                          var l = M(t, a);
+                          var l = P(t, a);
                           if (l.nextMatch && l.nextMatch[0] === i && l.targetMatch[0].length > 1) {
                             var c = v[l.targetMatch[0]][0];
                             if (new RegExp(c).test('0' + e[t - 1]))
@@ -2791,11 +2816,11 @@
                         if (o) return !0;
                         if (
                           !1 === n &&
-                          ((((c = M(t + 1, a)).targetMatch &&
+                          ((((c = P(t + 1, a)).targetMatch &&
                             c.targetMatchIndex === t &&
                             c.targetMatch[0].length > 1 &&
                             void 0 !== v[c.targetMatch[0]]) ||
-                            ((c = M(t + 2, a)).targetMatch &&
+                            ((c = P(t + 2, a)).targetMatch &&
                               c.targetMatchIndex === t + 1 &&
                               c.targetMatch[0].length > 1 &&
                               void 0 !== v[c.targetMatch[0]])) &&
@@ -2810,7 +2835,7 @@
                           return n;
                         if (
                           (n.fuzzy && ((e = n.buffer), (t = n.pos)),
-                          (c = M(t, a)).targetMatch &&
+                          (c = P(t, a)).targetMatch &&
                             c.targetMatch[0] &&
                             void 0 !== v[c.targetMatch[0]])
                         ) {
@@ -2919,7 +2944,7 @@
                       onKeyDown: function (e, t, i, n) {
                         e.ctrlKey &&
                           e.keyCode === a.default.RIGHT &&
-                          (this.inputmask._valueSet(P(new Date(), n)), f(this).trigger('setvalue'));
+                          (this.inputmask._valueSet(L(new Date(), n)), f(this).trigger('setvalue'));
                       },
                       onUnMask: function (e, t, i) {
                         return t ? x(i.outputFormat, S(e, i.inputFormat, i), i, !0) : t;
@@ -2933,7 +2958,7 @@
                       },
                       onBeforeMask: function (e, t) {
                         return (
-                          '[object Date]' === Object.prototype.toString.call(e) && (e = P(e, t)), e
+                          '[object Date]' === Object.prototype.toString.call(e) && (e = L(e, t)), e
                         );
                       },
                       insertMode: !1,
@@ -4633,12 +4658,12 @@
                             case i.quantifiermarker[0]:
                               var w = new a.default(!1, !1, !0),
                                 S = (o = o.replace(/[{}?]/g, '')).split('|'),
-                                P = S[0].split(','),
-                                M = isNaN(P[0]) ? P[0] : parseInt(P[0]),
-                                L = 1 === P.length ? M : isNaN(P[1]) ? P[1] : parseInt(P[1]),
+                                L = S[0].split(','),
+                                P = isNaN(L[0]) ? L[0] : parseInt(L[0]),
+                                M = 1 === L.length ? P : isNaN(L[1]) ? L[1] : parseInt(L[1]),
                                 T = isNaN(S[1]) ? S[1] : parseInt(S[1]);
-                              ('*' !== M && '+' !== M) || (M = '*' === L ? 0 : 1),
-                                (w.quantifier = { min: M, max: L, jit: T });
+                              ('*' !== P && '+' !== P) || (P = '*' === M ? 0 : 1),
+                                (w.quantifier = { min: P, max: M, jit: T });
                               var C = m.length > 0 ? m[m.length - 1].matches : p.matches;
                               if ((n = C.pop()).isAlternator) {
                                 C.push(n), (C = n.matches);
@@ -5734,9 +5759,9 @@
                           } else if (r.isAlternator) {
                             var w,
                               S = r,
-                              P = [],
-                              M = v.slice(),
-                              L = o.length,
+                              L = [],
+                              P = v.slice(),
+                              M = o.length,
                               T = !1,
                               C = i.length > 0 ? i.shift() : -1;
                             if (-1 === C || 'string' == typeof C) {
@@ -5763,7 +5788,7 @@
                               for (var B = 0; B < A.length; B++) {
                                 (O = parseInt(A[B])),
                                   (v = []),
-                                  (i = ('string' == typeof C && m(p, O, L)) || F.slice());
+                                  (i = ('string' == typeof C && m(p, O, M)) || F.slice());
                                 var V = S.matches[O];
                                 if (V && s(V, [O].concat(o), c)) r = !0;
                                 else if (
@@ -5776,10 +5801,10 @@
                                   var H = w[$],
                                     G = !1;
                                   (H.match.jit = H.match.jit || T),
-                                    (H.alternation = H.alternation || L),
+                                    (H.alternation = H.alternation || M),
                                     k(H);
-                                  for (var q = 0; q < P.length; q++) {
-                                    var z = P[q];
+                                  for (var q = 0; q < L.length; q++) {
+                                    var z = L[q];
                                     if (
                                       'string' != typeof C ||
                                       (void 0 !== H.alternation &&
@@ -5790,7 +5815,7 @@
                                         break;
                                       }
                                       if (d(H, z, u)) {
-                                        k(H, z) && ((G = !0), P.splice(P.indexOf(z), 0, H));
+                                        k(H, z) && ((G = !0), L.splice(L.indexOf(z), 0, H));
                                         break;
                                       }
                                       if (d(z, H, u)) {
@@ -5804,19 +5829,19 @@
                                           X.match.fn.test(Y.match.def, l, e, !1, u, !1))
                                       ) {
                                         _(H, z) || void 0 !== f.inputmask.userOptions.keepStatic
-                                          ? k(H, z) && ((G = !0), P.splice(P.indexOf(z), 0, H))
+                                          ? k(H, z) && ((G = !0), L.splice(L.indexOf(z), 0, H))
                                           : (u.keepStatic = !0);
                                         break;
                                       }
                                     }
                                   }
-                                  G || P.push(H);
+                                  G || L.push(H);
                                 }
                               }
-                              (v = M.concat(P)),
+                              (v = P.concat(L)),
                                 (p = e),
                                 (g = v.length > 0),
-                                (r = P.length > 0),
+                                (r = L.length > 0),
                                 (i = F.slice());
                             } else r = s(S.matches[C] || t.matches[C], [C].concat(o), c);
                             if (r) return !0;
@@ -6021,9 +6046,9 @@
                       x = this.opts,
                       w = _.maskset,
                       S = E.extend(!0, {}, w.validPositions),
-                      P = E.extend(!0, {}, w.tests),
+                      L = E.extend(!0, {}, w.tests),
+                      P = !1,
                       M = !1,
-                      L = !1,
                       T = void 0 !== r ? r : o.getLastValidPosition.call(_);
                     if (
                       (s &&
@@ -6059,28 +6084,28 @@
 
                       ) {
                         for (
-                          w.tests = {}, o.resetMaskSet.call(_, !0), M = !0, p = 0;
+                          w.tests = {}, o.resetMaskSet.call(_, !0), P = !0, p = 0;
                           p < C.length &&
-                          ((g = M.caret || o.getLastValidPosition.call(_, void 0, !0) + 1),
+                          ((g = P.caret || o.getLastValidPosition.call(_, void 0, !0) + 1),
                           (b = C[p]),
-                          (M = f.call(_, g, b, !1, n, !0)));
+                          (P = f.call(_, g, b, !1, n, !0)));
                           p++
                         )
-                          p === O && (L = M), 1 == e && M && (L = { caretPos: p });
-                        if (M) break;
+                          p === O && (M = P), 1 == e && P && (M = { caretPos: p });
+                        if (P) break;
                         if (
                           (o.resetMaskSet.call(_),
                           (h = a.getTest.call(_, v)),
                           (w.validPositions = E.extend(!0, {}, S)),
-                          (w.tests = E.extend(!0, {}, P)),
+                          (w.tests = E.extend(!0, {}, L)),
                           !w.excludes[v])
                         ) {
-                          L = l.call(_, e, t, i, n, v - 1, s);
+                          M = l.call(_, e, t, i, n, v - 1, s);
                           break;
                         }
                         var I = (0, a.getDecisionTaker)(h);
                         if (-1 !== w.excludes[v].indexOf(I + ':' + h.alternation)) {
-                          L = l.call(_, e, t, i, n, v - 1, s);
+                          M = l.call(_, e, t, i, n, v - 1, s);
                           break;
                         }
                         for (
@@ -6091,7 +6116,7 @@
                           delete w.validPositions[p];
                       }
                     }
-                    return (L && !1 === x.keepStatic) || delete w.excludes[v], L;
+                    return (M && !1 === x.keepStatic) || delete w.excludes[v], M;
                   }
                   function c(e, t, i) {
                     var n = this.opts,
@@ -6251,8 +6276,8 @@
                     var w = !0,
                       S = b.extend(!0, {}, k.validPositions);
                     if (!1 === y.keepStatic && void 0 !== k.excludes[_] && !0 !== r && !0 !== n)
-                      for (var P = _; P < (g.isRTL ? e.begin : e.end); P++)
-                        void 0 !== k.excludes[P] && ((k.excludes[P] = void 0), delete k.tests[P]);
+                      for (var L = _; L < (g.isRTL ? e.begin : e.end); L++)
+                        void 0 !== k.excludes[L] && ((k.excludes[L] = void 0), delete k.tests[L]);
                     if (
                       ('function' == typeof y.preValidation &&
                         !0 !== n &&
@@ -6273,25 +6298,25 @@
                       !0 === w)
                     ) {
                       if (((w = x(_, t, i)), (!i || !0 === n) && !1 === w && !0 !== s)) {
-                        var M = k.validPositions[_];
+                        var P = k.validPositions[_];
                         if (
-                          !M ||
-                          !0 !== M.match.static ||
-                          (M.match.def !== t && t !== y.skipOptionalPartCharacter)
+                          !P ||
+                          !0 !== P.match.static ||
+                          (P.match.def !== t && t !== y.skipOptionalPartCharacter)
                         ) {
                           if (
                             y.insertMode ||
                             void 0 === k.validPositions[o.seekNext.call(g, _)] ||
                             e.end > _
                           ) {
-                            var L = !1;
+                            var M = !1;
                             if (
                               (k.jitOffset[_] &&
                                 void 0 === k.validPositions[o.seekNext.call(g, _)] &&
                                 !1 !== (w = f.call(g, _ + k.jitOffset[_], t, !0, !0)) &&
-                                (!0 !== r && (w.caret = _), (L = !0)),
+                                (!0 !== r && (w.caret = _), (M = !0)),
                               e.end > _ && (k.validPositions[_] = void 0),
-                              !L && !o.isMask.call(g, _, y.keepStatic && 0 === _))
+                              !M && !o.isMask.call(g, _, y.keepStatic && 0 === _))
                             )
                               for (
                                 var T = _ + 1, C = o.seekNext.call(g, _, !1, 0 !== _);
@@ -6573,24 +6598,76 @@
     (i.o = (e, t) => Object.prototype.hasOwnProperty.call(e, t)),
     (() => {
       'use strict';
-      i(598), i(212), i(407), window, document, document.documentElement, document.body;
-      var e = i(711),
-        t = i.n(e),
-        n = Object.defineProperty,
-        a = (e, t, i) => (
+      i(598), i(212), i(407), i(864), window, document, document.documentElement, document.body;
+      const e = () => {
+          const e = document.querySelector('.header'),
+            t = document.querySelector('.header__top'),
+            i = document.querySelector('.hero'),
+            n = document.querySelector('.submenu'),
+            a = document.querySelector('.site-container'),
+            r = e.offsetHeight,
+            o = t.offsetHeight,
+            s = n.offsetHeight,
+            l = i.offsetHeight;
+          function c() {
+            let e = window.scrollY;
+            e >= 5
+              ? (a.classList.add('header--fill'), a.classList.remove('header--no-fill'))
+              : (a.classList.remove('header--fill'), a.classList.add('header--no-fill')),
+              e >= l + o - r + 1
+                ? (a.classList.add('header--fixed'),
+                  (i.style.marginBottom = `${s}px`),
+                  (i.style.marginTop = null))
+                : (a.classList.remove('header--fixed'), (i.style.marginBottom = null));
+          }
+          document.documentElement.clientWidth <= 768
+            ? (console.log('<=768'),
+              a.classList.remove('header--fixed'),
+              window.removeEventListener('scroll', c))
+            : (console.log('++++'), window.addEventListener('scroll', c));
+        },
+        t = function (e) {
+          let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 250,
+            i = !1,
+            n = null,
+            a = null;
+          return function r() {
+            for (var o = arguments.length, s = new Array(o), l = 0; l < o; l++) s[l] = arguments[l];
+            if (i) return (n = s), void (a = this);
+            e.apply(this, s),
+              (i = !0),
+              setTimeout(() => {
+                (i = !1), a && (r.apply(a, n), (a = null), (n = null));
+              }, t);
+          };
+        },
+        n = () => {
+          const e = document?.querySelector('.header').offsetHeight;
+          document.querySelector(':root').style.setProperty('--header-height', `${e}px`);
+          const t = document?.querySelector('.header__top').offsetHeight;
+          document.querySelector(':root').style.setProperty('--header-top-height', `${t}px`);
+          const i = document?.querySelector('.header__bottom').offsetHeight;
+          document.querySelector(':root').style.setProperty('--header-bottom-height', `${i}px`);
+          const n = document?.querySelector('.submenu__item-active').offsetHeight;
+          document.querySelector(':root').style.setProperty('--submenu-height', `${n}px`);
+        };
+      var a = i(711),
+        r = i.n(a),
+        o = Object.defineProperty,
+        s = (e, t, i) => (
           ((e, t, i) => {
             t in e
-              ? n(e, t, { enumerable: !0, configurable: !0, writable: !0, value: i })
+              ? o(e, t, { enumerable: !0, configurable: !0, writable: !0, value: i })
               : (e[t] = i);
           })(e, 'symbol' != typeof t ? t + '' : t, i),
           i
         );
-      const r =
+      const l =
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        o = /^[0-9]+$/,
-        s = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/,
-        l = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-      var c = ((e) => (
+        c = /^[0-9]+$/,
+        u = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/,
+        d = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+      var f = ((e) => (
           (e.Required = 'required'),
           (e.Email = 'email'),
           (e.MinLength = 'minLength'),
@@ -6605,53 +6682,53 @@
           (e.MaxFilesCount = 'maxFilesCount'),
           (e.Files = 'files'),
           e
-        ))(c || {}),
-        u = ((e) => ((e.Required = 'required'), e))(u || {}),
-        d = ((e) => ((e.Label = 'label'), (e.LabelArrow = 'labelArrow'), e))(d || {});
-      const f = [
-          { key: c.Required, dict: { en: 'The field is required' } },
-          { key: c.Email, dict: { en: 'Email has invalid format' } },
+        ))(f || {}),
+        h = ((e) => ((e.Required = 'required'), e))(h || {}),
+        p = ((e) => ((e.Label = 'label'), (e.LabelArrow = 'labelArrow'), e))(p || {});
+      const m = [
+          { key: f.Required, dict: { en: 'The field is required' } },
+          { key: f.Email, dict: { en: 'Email has invalid format' } },
           {
-            key: c.MaxLength,
+            key: f.MaxLength,
             dict: { en: 'The field must contain a maximum of :value characters' },
           },
           {
-            key: c.MinLength,
+            key: f.MinLength,
             dict: { en: 'The field must contain a minimum of :value characters' },
           },
           {
-            key: c.Password,
+            key: f.Password,
             dict: {
               en: 'Password must contain minimum eight characters, at least one letter and one number',
             },
           },
           {
-            key: c.StrongPassword,
+            key: f.StrongPassword,
             dict: {
               en: 'Password should contain minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character',
             },
           },
-          { key: c.Number, dict: { en: 'Value should be a number' } },
-          { key: c.MaxNumber, dict: { en: 'Number should be less or equal than :value' } },
-          { key: c.MinNumber, dict: { en: 'Number should be more or equal than :value' } },
-          { key: c.MinFilesCount, dict: { en: 'Files count should be more or equal than :value' } },
-          { key: c.MaxFilesCount, dict: { en: 'Files count should be less or equal than :value' } },
+          { key: f.Number, dict: { en: 'Value should be a number' } },
+          { key: f.MaxNumber, dict: { en: 'Number should be less or equal than :value' } },
+          { key: f.MinNumber, dict: { en: 'Number should be more or equal than :value' } },
+          { key: f.MinFilesCount, dict: { en: 'Files count should be more or equal than :value' } },
+          { key: f.MaxFilesCount, dict: { en: 'Files count should be less or equal than :value' } },
           {
-            key: c.Files,
+            key: f.Files,
             dict: {
               en: 'Uploaded files have one or several invalid properties (extension/size/type etc).',
             },
           },
         ],
-        h = (e) => 'object' == typeof e && null !== e && 'then' in e && 'function' == typeof e.then,
-        p = (e) =>
+        v = (e) => 'object' == typeof e && null !== e && 'then' in e && 'function' == typeof e.then,
+        g = (e) =>
           Array.isArray(e)
             ? e.filter((e) => e.length > 0)
             : 'string' == typeof e && e.trim()
             ? [...e.split(' ').filter((e) => e.length > 0)]
             : [],
-        m = (e) => e instanceof Element || e instanceof HTMLDocument,
-        v = {
+        b = (e) => e instanceof Element || e instanceof HTMLDocument,
+        y = {
           errorFieldStyle: { color: '#b81111', border: '1px solid #B81111' },
           errorFieldCssClass: 'just-validate-error-field',
           successFieldCssClass: 'just-validate-success-field',
@@ -6663,42 +6740,42 @@
           testingMode: !1,
           validateBeforeSubmitting: !1,
         };
-      class g {
+      class k {
         constructor(e, t, i) {
-          a(this, 'form', null),
-            a(this, 'fields', {}),
-            a(this, 'groupFields', {}),
-            a(this, 'errors', {}),
-            a(this, 'isValid', !1),
-            a(this, 'isSubmitted', !1),
-            a(this, 'globalConfig', v),
-            a(this, 'errorLabels', {}),
-            a(this, 'successLabels', {}),
-            a(this, 'eventListeners', []),
-            a(this, 'dictLocale', f),
-            a(this, 'currentLocale', 'en'),
-            a(this, 'customStyleTags', {}),
-            a(this, 'onSuccessCallback'),
-            a(this, 'onFailCallback'),
-            a(this, 'tooltips', []),
-            a(this, 'lastScrollPosition'),
-            a(this, 'isScrollTick'),
-            a(this, 'fieldIds', new Map()),
-            a(this, 'getKeyByFieldSelector', (e) => this.fieldIds.get(e)),
-            a(this, 'getFieldSelectorByKey', (e) => {
+          s(this, 'form', null),
+            s(this, 'fields', {}),
+            s(this, 'groupFields', {}),
+            s(this, 'errors', {}),
+            s(this, 'isValid', !1),
+            s(this, 'isSubmitted', !1),
+            s(this, 'globalConfig', y),
+            s(this, 'errorLabels', {}),
+            s(this, 'successLabels', {}),
+            s(this, 'eventListeners', []),
+            s(this, 'dictLocale', m),
+            s(this, 'currentLocale', 'en'),
+            s(this, 'customStyleTags', {}),
+            s(this, 'onSuccessCallback'),
+            s(this, 'onFailCallback'),
+            s(this, 'tooltips', []),
+            s(this, 'lastScrollPosition'),
+            s(this, 'isScrollTick'),
+            s(this, 'fieldIds', new Map()),
+            s(this, 'getKeyByFieldSelector', (e) => this.fieldIds.get(e)),
+            s(this, 'getFieldSelectorByKey', (e) => {
               for (const [t, i] of this.fieldIds) if (e === i) return t;
             }),
-            a(this, 'setKeyByFieldSelector', (e) => {
+            s(this, 'setKeyByFieldSelector', (e) => {
               if (this.fieldIds.has(e)) return this.fieldIds.get(e);
               const t = String(this.fieldIds.size + 1);
               return this.fieldIds.set(e, t), t;
             }),
-            a(this, 'refreshAllTooltips', () => {
+            s(this, 'refreshAllTooltips', () => {
               this.tooltips.forEach((e) => {
                 e.refresh();
               });
             }),
-            a(this, 'handleDocumentScroll', () => {
+            s(this, 'handleDocumentScroll', () => {
               (this.lastScrollPosition = window.scrollY),
                 this.isScrollTick ||
                   (window.requestAnimationFrame(() => {
@@ -6706,10 +6783,10 @@
                   }),
                   (this.isScrollTick = !0));
             }),
-            a(this, 'formSubmitHandler', (e) => {
+            s(this, 'formSubmitHandler', (e) => {
               e.preventDefault(), (this.isSubmitted = !0), this.validateHandler(e);
             }),
-            a(this, 'handleFieldChange', (e) => {
+            s(this, 'handleFieldChange', (e) => {
               let t;
               for (const i in this.fields)
                 if (this.fields[i].elem === e) {
@@ -6718,7 +6795,7 @@
                 }
               t && this.validateField(t, !0);
             }),
-            a(this, 'handleGroupChange', (e) => {
+            s(this, 'handleGroupChange', (e) => {
               let t, i;
               for (const n in this.groupFields) {
                 const a = this.groupFields[n];
@@ -6729,7 +6806,7 @@
               }
               t && i && this.validateGroup(i, t);
             }),
-            a(this, 'handlerChange', (e) => {
+            s(this, 'handlerChange', (e) => {
               e.target &&
                 (this.handleFieldChange(e.target),
                 this.handleGroupChange(e.target),
@@ -6743,7 +6820,7 @@
             (this.errors = {}),
             (this.isValid = !1),
             (this.isSubmitted = !1),
-            (this.globalConfig = v),
+            (this.globalConfig = y),
             (this.errorLabels = {}),
             (this.successLabels = {}),
             (this.eventListeners = []),
@@ -6764,14 +6841,14 @@
             this.setForm(e);
           }
           if (
-            ((this.globalConfig = { ...v, ...t }),
-            i && (this.dictLocale = [...i, ...f]),
+            ((this.globalConfig = { ...y, ...t }),
+            i && (this.dictLocale = [...i, ...m]),
             this.isTooltip())
           ) {
             const e = document.createElement('style');
             (e.textContent =
               ".just-validate-error-label[data-tooltip=true]{position:fixed;padding:4px 8px;background:#423f3f;color:#fff;white-space:nowrap;z-index:10;border-radius:4px;transform:translateY(-5px)}.just-validate-error-label[data-tooltip=true]:before{content:'';width:0;height:0;border-left:solid 5px transparent;border-right:solid 5px transparent;border-bottom:solid 5px #423f3f;position:absolute;z-index:3;display:block;bottom:-5px;transform:rotate(180deg);left:calc(50% - 5px)}.just-validate-error-label[data-tooltip=true][data-direction=left]{transform:translateX(-5px)}.just-validate-error-label[data-tooltip=true][data-direction=left]:before{right:-7px;bottom:auto;left:auto;top:calc(50% - 2px);transform:rotate(90deg)}.just-validate-error-label[data-tooltip=true][data-direction=right]{transform:translateX(5px)}.just-validate-error-label[data-tooltip=true][data-direction=right]:before{right:auto;bottom:auto;left:-7px;top:calc(50% - 2px);transform:rotate(-90deg)}.just-validate-error-label[data-tooltip=true][data-direction=bottom]{transform:translateY(5px)}.just-validate-error-label[data-tooltip=true][data-direction=bottom]:before{right:auto;bottom:auto;left:calc(50% - 5px);top:-5px;transform:rotate(0)}"),
-              (this.customStyleTags[d.Label] = document.head.appendChild(e)),
+              (this.customStyleTags[p.Label] = document.head.appendChild(e)),
               this.addListener('scroll', document, this.handleDocumentScroll);
           }
         }
@@ -6784,12 +6861,12 @@
               : n.dict[this.currentLocale];
           if ((r || (i && (r = i)), r && void 0 !== t))
             switch (e) {
-              case c.MaxLength:
-              case c.MinLength:
-              case c.MaxNumber:
-              case c.MinNumber:
-              case c.MinFilesCount:
-              case c.MaxFilesCount:
+              case f.MaxLength:
+              case f.MinLength:
+              case f.MaxNumber:
+              case f.MinNumber:
+              case f.MinFilesCount:
+              case f.MaxFilesCount:
                 r = r.replace(':value', String(t));
             }
           return r || i || 'Value is incorrect';
@@ -6839,30 +6916,30 @@
           }
         }
         validateGroupRule(e, t, i) {
-          i.rule === u.Required &&
+          i.rule === h.Required &&
             (t.every((e) => !e.checked) ? this.setGroupInvalid(e, i) : this.setGroupValid(e, i));
         }
         validateFieldRule(e, t, i, n = !1) {
           const a = i.value,
-            u = this.getElemValue(t);
-          var d;
-          if (i.plugin) i.plugin(u, this.fields) || this.setFieldInvalid(e, i);
+            r = this.getElemValue(t);
+          var o;
+          if (i.plugin) i.plugin(r, this.fields) || this.setFieldInvalid(e, i);
           else
             switch (i.rule) {
-              case c.Required:
+              case f.Required:
                 ((e) => {
                   let t = e;
                   return 'string' == typeof e && (t = e.trim()), !t;
-                })(u) && this.setFieldInvalid(e, i);
+                })(r) && this.setFieldInvalid(e, i);
                 break;
-              case c.Email:
-                if ('string' != typeof u) {
+              case f.Email:
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                (d = u), r.test(d) || this.setFieldInvalid(e, i);
+                (o = r), l.test(o) || this.setFieldInvalid(e, i);
                 break;
-              case c.MaxLength:
+              case f.MaxLength:
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. The field will be always invalid.`,
@@ -6877,14 +6954,14 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('string' != typeof u) {
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                ((e, t) => e.length > t)(u, a) && this.setFieldInvalid(e, i);
+                if ('' === r) break;
+                ((e, t) => e.length > t)(r, a) && this.setFieldInvalid(e, i);
                 break;
-              case c.MinLength:
+              case f.MinLength:
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. The field will be always invalid.`,
@@ -6899,38 +6976,38 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('string' != typeof u) {
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                ((e, t) => e.length < t)(u, a) && this.setFieldInvalid(e, i);
+                if ('' === r) break;
+                ((e, t) => e.length < t)(r, a) && this.setFieldInvalid(e, i);
                 break;
-              case c.Password:
-                if ('string' != typeof u) {
+              case f.Password:
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                ((e) => s.test(e))(u) || this.setFieldInvalid(e, i);
+                if ('' === r) break;
+                ((e) => u.test(e))(r) || this.setFieldInvalid(e, i);
                 break;
-              case c.StrongPassword:
-                if ('string' != typeof u) {
+              case f.StrongPassword:
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                ((e) => l.test(e))(u) || this.setFieldInvalid(e, i);
+                if ('' === r) break;
+                ((e) => d.test(e))(r) || this.setFieldInvalid(e, i);
                 break;
-              case c.Number:
-                if ('string' != typeof u) {
+              case f.Number:
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                ((e) => o.test(e))(u) || this.setFieldInvalid(e, i);
+                if ('' === r) break;
+                ((e) => c.test(e))(r) || this.setFieldInvalid(e, i);
                 break;
-              case c.MaxNumber: {
+              case f.MaxNumber: {
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. The field will be always invalid.`,
@@ -6945,16 +7022,16 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('string' != typeof u) {
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                const t = +u;
+                if ('' === r) break;
+                const t = +r;
                 (Number.isNaN(t) || ((e, t) => e > t)(t, a)) && this.setFieldInvalid(e, i);
                 break;
               }
-              case c.MinNumber: {
+              case f.MinNumber: {
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. The field will be always invalid.`,
@@ -6969,16 +7046,16 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('string' != typeof u) {
+                if ('string' != typeof r) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
-                if ('' === u) break;
-                const t = +u;
+                if ('' === r) break;
+                const t = +r;
                 (Number.isNaN(t) || ((e, t) => e < t)(t, a)) && this.setFieldInvalid(e, i);
                 break;
               }
-              case c.CustomRegexp: {
+              case f.CustomRegexp: {
                 if (void 0 === a)
                   return (
                     console.error(
@@ -6996,11 +7073,11 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                const n = String(u);
+                const n = String(r);
                 '' === n || t.test(n) || this.setFieldInvalid(e, i);
                 break;
               }
-              case c.MinFilesCount:
+              case f.MinFilesCount:
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. This field will be always invalid.`,
@@ -7015,12 +7092,12 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if (Number.isFinite(null == u ? void 0 : u.length) && u.length < a) {
+                if (Number.isFinite(null == r ? void 0 : r.length) && r.length < a) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
                 break;
-              case c.MaxFilesCount:
+              case f.MaxFilesCount:
                 if (void 0 === a) {
                   console.error(
                     `Value for ${i.rule} rule for [${e}] field is not defined. This field will be always invalid.`,
@@ -7035,12 +7112,12 @@
                     this.setFieldInvalid(e, i);
                   break;
                 }
-                if (Number.isFinite(null == u ? void 0 : u.length) && u.length > a) {
+                if (Number.isFinite(null == r ? void 0 : r.length) && r.length > a) {
                   this.setFieldInvalid(e, i);
                   break;
                 }
                 break;
-              case c.Files: {
+              case f.Files: {
                 if (void 0 === a)
                   return (
                     console.error(
@@ -7073,14 +7150,14 @@
                     o = Array.isArray(t.types) && !t.types.includes(e.type);
                   return i || n || a || r || o;
                 };
-                if ('object' == typeof u && null !== u)
-                  for (let a = 0, r = u.length; a < r; ++a) {
-                    const r = u.item(a);
-                    if (!r) {
+                if ('object' == typeof r && null !== r)
+                  for (let a = 0, o = r.length; a < o; ++a) {
+                    const o = r.item(a);
+                    if (!o) {
                       this.setFieldInvalid(e, i);
                       break;
                     }
-                    if (n(r, t)) {
+                    if (n(o, t)) {
                       this.setFieldInvalid(e, i);
                       break;
                     }
@@ -7095,7 +7172,7 @@
                     ),
                     void this.setFieldInvalid(e, i)
                   );
-                const t = i.validator(u, this.fields);
+                const t = i.validator(r, this.fields);
                 if (
                   ('boolean' != typeof t &&
                     'function' != typeof t &&
@@ -7107,7 +7184,7 @@
                   if (!n) {
                     this.fields[e].asyncCheckPending = !1;
                     const n = t();
-                    return h(n)
+                    return v(n)
                       ? n
                           .then((t) => {
                             t || this.setFieldInvalid(e, i);
@@ -7134,14 +7211,14 @@
           return (
             [...n.rules].reverse().forEach((i) => {
               const r = this.validateFieldRule(e, n.elem, i, t);
-              h(r) && a.push(r);
+              v(r) && a.push(r);
             }),
             n.isValid && this.setFieldValid(e, null == (i = n.config) ? void 0 : i.successMessage),
             Promise.allSettled(a)
           );
         }
         revalidateField(e) {
-          if ('string' != typeof e && !m(e))
+          if ('string' != typeof e && !b(e))
             throw Error(
               'Field selector is not valid. Please specify a string selector or a valid DOM element.',
             );
@@ -7162,7 +7239,7 @@
           return (
             [...t.rules].reverse().forEach((n) => {
               const a = this.validateGroupRule(e, t.elems, n);
-              h(a) && i.push(a);
+              v(a) && i.push(a);
             }),
             Promise.allSettled(i)
           );
@@ -7184,12 +7261,12 @@
             const i = [];
             Object.keys(this.fields).forEach((e) => {
               const t = this.validateField(e);
-              h(t) && i.push(t);
+              v(t) && i.push(t);
             }),
               Object.keys(this.groupFields).forEach((e) => {
                 const t = this.groupFields[e],
                   n = this.validateGroup(e, t);
-                h(n) && i.push(n);
+                v(n) && i.push(n);
               }),
               i.length
                 ? Promise.allSettled(i).then(() => {
@@ -7232,7 +7309,7 @@
             (this.eventListeners = this.eventListeners.filter((i) => i.type !== e || i.elem !== t));
         }
         addField(e, t, i) {
-          if ('string' != typeof e && !m(e))
+          if ('string' != typeof e && !b(e))
             throw Error(
               'Field selector is not valid. Please specify a string selector or a valid DOM element.',
             );
@@ -7244,9 +7321,9 @@
           t.forEach((e) => {
             if (!('rule' in e || 'validator' in e || 'plugin' in e))
               throw Error('Rules argument must contain at least one rule or validator property.');
-            if (!(e.validator || e.plugin || (e.rule && Object.values(c).includes(e.rule))))
+            if (!(e.validator || e.plugin || (e.rule && Object.values(f).includes(e.rule))))
               throw Error(
-                `Rule should be one of these types: ${Object.values(c).join(
+                `Rule should be one of these types: ${Object.values(f).join(
                   ', ',
                 )}. Provided value: ${e.rule}`,
               );
@@ -7260,7 +7337,7 @@
           );
         }
         removeField(e) {
-          if ('string' != typeof e && !m(e))
+          if ('string' != typeof e && !b(e))
             throw Error(
               'Field selector is not valid. Please specify a string selector or a valid DOM element.',
             );
@@ -7321,7 +7398,7 @@
             s = this.setKeyByFieldSelector(e);
           return (
             (this.groupFields[s] = {
-              rules: [{ rule: u.Required, errorMessage: t, successMessage: n }],
+              rules: [{ rule: h.Required, errorMessage: t, successMessage: n }],
               groupElem: a,
               elems: o,
               isDirty: !1,
@@ -7371,11 +7448,11 @@
             r.elem.style[e] = '';
           }),
             r.elem.classList.remove(
-              ...p(
+              ...g(
                 (null == (n = r.config) ? void 0 : n.errorFieldCssClass) ||
                   this.globalConfig.errorFieldCssClass,
               ),
-              ...p(
+              ...g(
                 (null == (a = r.config) ? void 0 : a.successFieldCssClass) ||
                   this.globalConfig.successFieldCssClass,
               ),
@@ -7396,7 +7473,7 @@
                 var i;
                 (t.style[e] = ''),
                   t.classList.remove(
-                    ...p(
+                    ...g(
                       (null == (i = n.config) ? void 0 : i.errorFieldCssClass) ||
                         this.globalConfig.errorFieldCssClass,
                     ),
@@ -7412,7 +7489,7 @@
                 var i;
                 (t.style[e] = ''),
                   t.classList.remove(
-                    ...p(
+                    ...g(
                       (null == (i = n.config) ? void 0 : i.successFieldCssClass) ||
                         this.globalConfig.successFieldCssClass,
                     ),
@@ -7486,7 +7563,7 @@
           return (
             Object.assign(n.style, a),
             n.classList.add(
-              ...p(
+              ...g(
                 (null == i ? void 0 : i.errorLabelCssClass) || this.globalConfig.errorLabelCssClass,
               ),
               'just-validate-error-label',
@@ -7506,7 +7583,7 @@
           return (
             Object.assign(n.style, a),
             n.classList.add(
-              ...p(
+              ...g(
                 (null == i ? void 0 : i.successLabelCssClass) ||
                   this.globalConfig.successLabelCssClass,
               ),
@@ -7596,7 +7673,7 @@
                   !0,
                 ),
                 l.elem.classList.add(
-                  ...p(
+                  ...g(
                     (null == (n = l.config) ? void 0 : n.successFieldCssClass) ||
                       this.globalConfig.successFieldCssClass,
                   ),
@@ -7606,7 +7683,7 @@
           }
           (this.isValid = !1),
             l.elem.classList.add(
-              ...p(
+              ...g(
                 (null == (a = l.config) ? void 0 : a.errorFieldCssClass) ||
                   this.globalConfig.errorFieldCssClass,
               ),
@@ -7635,7 +7712,7 @@
                   this.globalConfig.successFieldStyle,
               ),
                 e.classList.add(
-                  ...p(
+                  ...g(
                     (null == (i = r.config) ? void 0 : i.successFieldCssClass) ||
                       this.globalConfig.successFieldCssClass,
                   ),
@@ -7661,7 +7738,7 @@
                   this.globalConfig.errorFieldStyle,
               ),
                 e.classList.add(
-                  ...p(
+                  ...g(
                     (null == (i = r.config) ? void 0 : i.errorFieldCssClass) ||
                       this.globalConfig.errorFieldCssClass,
                   ),
@@ -7721,16 +7798,16 @@
           return (this.onFailCallback = e), this;
         }
       }
-      var b = i(382),
-        y = i.n(b);
-      const k = (e, t, i) => {
+      var _ = i(382),
+        E = i.n(_);
+      const x = (e, t, i) => {
         const n = document?.querySelector(e),
           a = n?.querySelector('input[type="tel"]'),
           r = n?.querySelector('input[type="email"]');
-        if ((r && y()('email').mask(r), !n)) return console.error('Нет такого селектора!'), !1;
+        if ((r && E()('email').mask(r), !n)) return console.error('Нет такого селектора!'), !1;
         if (!t) return console.error('Вы не передали правила валидации!'), !1;
         a &&
-          (new (y())('+7 (999) 999-99-99').mask(a),
+          (new (E())('+7 (999) 999-99-99').mask(a),
           t.forEach((e) => {
             '.phone' == e[0] &&
               e[1].push({
@@ -7741,31 +7818,10 @@
                 errorMessage: 'Некоректный телефон',
               });
           }));
-        const o = new g(e);
+        const o = new k(e);
         for (let e of t) for (let t = 0; t <= e.length; t++) o.addField(e[0], e[1]);
       };
-      (() => {
-        const e = document.querySelector('.header'),
-          t = document.querySelector('.header__top'),
-          i = document.querySelector('.hero'),
-          n = document.querySelector('.submenu__item-active'),
-          a = document.querySelector('.site-container'),
-          r = e.offsetHeight,
-          o = t.offsetHeight,
-          s = n.offsetHeight,
-          l = i.offsetHeight;
-        window.addEventListener('scroll', () => {
-          let e = window.scrollY;
-          e >= 5
-            ? (a.classList.add('header--fill'), a.classList.remove('header--no-fill'))
-            : (a.classList.remove('header--fill'), a.classList.add('header--no-fill')),
-            e >= l + o - r + 1
-              ? (a.classList.add('header--fixed'),
-                (i.style.marginBottom = `${s}px`),
-                (i.style.marginTop = null))
-              : (a.classList.remove('header--fixed'), (i.style.marginBottom = null));
-        });
-      })(),
+      e(),
         (() => {
           function e(e, t, i) {
             let n = !(arguments.length > 3 && void 0 !== arguments[3]) || arguments[3];
@@ -7825,23 +7881,19 @@
             e('.hero__btn-help', '.popup-help', '.popup-help-close'),
             e('.hero__btn-question', '.popup-free', '.popup-free-close'),
             e('.emergency', '.popup-emergency', '.popup-emergency .popup__close');
-        })(),
-        (() => {
-          const e = document?.querySelector('.header').offsetHeight;
-          document.querySelector(':root').style.setProperty('--header-height', `${e}px`);
-          const t = document?.querySelector('.header__top').offsetHeight;
-          document.querySelector(':root').style.setProperty('--header-top-height', `${t}px`);
-          const i = document?.querySelector('.header__bottom').offsetHeight;
-          document.querySelector(':root').style.setProperty('--header-bottom-height', `${i}px`);
-          const n = document?.querySelector('.submenu__item-active').offsetHeight;
-          document.querySelector(':root').style.setProperty('--submenu-height', `${n}px`);
-        })(),
-        t().init();
-      const _ = [
+        })();
+      let w = t(() => {
+          n();
+        }),
+        S = t(() => {
+          e();
+        });
+      window.addEventListener('resize', w), window.addEventListener('resize', S), n(), r().init();
+      const L = [
           ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
           ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
         ],
-        E = [
+        P = [
           ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
           [
             '.email',
@@ -7852,14 +7904,14 @@
           ],
           ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
         ];
-      k('.form-1', _),
-        k('.form-2', [
+      x('.form-1', L),
+        x('.form-2', [
           ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
           ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
         ]),
-        k('.form-3', E),
-        k('.form-4', E),
-        k('.form-1-2', _),
+        x('.form-3', P),
+        x('.form-4', P),
+        x('.form-1-2', L),
         i(755);
     })();
 })();
