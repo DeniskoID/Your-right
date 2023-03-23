@@ -1548,8 +1548,8 @@ a {
     grid-auto-rows: 1fr;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1.875rem 2fr;
-    grid-template-rows: 1fr 2fr;
+    -ms-grid-rows: 1fr 1.875rem 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 1.875rem;
     grid-template-areas: '.' '.';
   }
@@ -1560,6 +1560,10 @@ a {
 @media (max-width: 576px) {
   .itcss__item-subtitle:last-of-type {
     margin-bottom: 0.3125rem;
+  }
+  .consult__items {
+    -ms-grid-rows: 1fr 2fr;
+    grid-template-rows: 1fr 2fr;
   }
   .consult__form-title {
     margin-bottom: 0.625rem;
