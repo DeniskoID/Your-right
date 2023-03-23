@@ -748,6 +748,10 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  width: 75rem;
+  height: 100%;
+  margin: 0 auto;
 }
 .submenu__item {
   position: absolute;
@@ -807,12 +811,12 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 100%;
   height: 100%;
   color: var(--dark-gray-color);
   line-height: 125%;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
+  word-wrap: wrap;
 }
 .header--fixed .submenu {
   position: fixed;
@@ -825,13 +829,13 @@ a {
   padding-left: 0;
   padding-right: 0;
 }
-.submenu__items {
+.submenu__nav {
   position: relative;
   height: 105px;
   width: 100%;
   overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
+  white-space: wrap;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -845,10 +849,10 @@ a {
   user-select: none;
   cursor: pointer;
 }
-.submenu__items::-webkit-scrollbar {
+.submenu__nav::-webkit-scrollbar {
   display: none;
 }
-.submenu__items.active {
+.submenu__nav.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
   -webkit-transform: scale(1.03);
@@ -1544,8 +1548,8 @@ a {
     grid-auto-rows: 1fr;
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-    -ms-grid-rows: 1fr 1.875rem 1fr;
-    grid-template-rows: 1fr 1fr;
+    -ms-grid-rows: 1fr 1.875rem 2fr;
+    grid-template-rows: 1fr 2fr;
     gap: 1.875rem;
     grid-template-areas: '.' '.';
   }
@@ -1980,9 +1984,9 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -2013,6 +2017,12 @@ a {
   background: 0 0;
 }
 @media (max-width: 768px) {
+  .popup-big,
+  .popup-consult,
+  .popup-emergency {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
   .popup-big__content,
   .popup-consult__content,
   .popup-emergency__content {
@@ -2032,6 +2042,12 @@ a {
   text-align: center;
   border-radius: 0.875rem;
   background-color: var(--light-color);
+}
+@media (max-width: 768px) {
+  .popup-form {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
 }
 @media (max-width: 576px) {
   .popup-form {

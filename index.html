@@ -427,7 +427,7 @@
             <form class="form-1 popup-form form-consult" action="#"><label for="callback-name"><input id="callback-name"
                   class="popup-form__control popup-form__input name" name="user_name" type="text" placeholder="Имя"
                   autocomplete="off"></label> <label for="tel"><input id="tel"
-                  class="popup-form__control phone popup-form__input" name="user_phone" type="tel"
+                  class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel"
                   placeholder="Контактный телефон" autocomplete="off"></label> <button
                 class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button>
               <p class="form-consult__notice">Ваши данные конфиденциальны</p>
@@ -437,20 +437,18 @@
       </div>
     </div>
     <div class="popup-emergency" data-modal>
-      <div class="popup-emergency__dialog">
-        <div class="popup-emergency__content"><button type="button" class="popup__close"><strong>×</strong></button>
-          <div class="popup-emergency__form">
-            <h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам
-                перезвоним</span></h2>
-            <form class="form-1-2 popup-form form-consult" action="#"><label for="callback-name1"><input
-                  id="callback-name1" class="popup-form__control popup-form__input name" name="user_name" type="text"
-                  placeholder="Имя" autocomplete="off"></label> <label for="tel"><input id="tel"
-                  class="popup-form__control phone popup-form__input" name="user_phone" type="tel"
-                  placeholder="Контактный телефон" autocomplete="off"></label> <button
-                class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button>
-              <p class="form-consult__notice">Ваши данные конфиденциальны</p>
-            </form>
-          </div>
+      <div class="popup-emergency__content"><button type="button" class="popup__close"><strong>×</strong></button>
+        <div class="popup-emergency__form">
+          <h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам
+              перезвоним</span></h2>
+          <form class="form-1-2 popup-form form-consult" action="#"><label for="callback-name1"><input
+                id="callback-name1" class="popup-form__control popup-form__input name" name="user_name" type="text"
+                placeholder="Имя"></label> <label for="tel"><input id="tel"
+                class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel"
+                placeholder="Контактный телефон" autocomplete="off" required></label> <button
+              class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button>
+            <p class="form-consult__notice">Ваши данные конфиденциальны</p>
+          </form>
         </div>
       </div>
     </div>
@@ -464,7 +462,7 @@
                   class="popup-form__control popup-form__input name" autocomplete="off" type="text"
                   placeholder="Ваше имя" name="Имя"></label></div>
             <div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone"
-                  class="popup-form__control popup-form__input phone" autocomplete="off" type="tel"
+                  class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel"
                   placeholder="Ваш телефон" name="Телефон"></label></div>
             <div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email"
                   class="popup-form__input popup-form__control email" autocomplete="off" type="email"
@@ -524,7 +522,7 @@
                   class="popup-form__control popup-form__input name" autocomplete="off" type="text"
                   placeholder="Ваше имя" name="Имя"></label></div>
             <div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone"
-                  class="popup-form__control popup-form__input phone" autocomplete="off" type="tel"
+                  class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel"
                   placeholder="Ваш телефон" name="Телефон"></label></div>
             <div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email"
                   class="popup-form__input popup-form__control email" autocomplete="off" type="email"

@@ -610,7 +610,7 @@
         console.log('components-OK');
       },
       864: () => {
-        const e = document.querySelector('.submenu__items');
+        const e = document.querySelector('.submenu__nav');
         let t,
           i,
           n = !1;
@@ -782,7 +782,7 @@
           (e.type = 'text/javascript'),
             (e.async = !0),
             (e.src =
-              'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A5f15a6d762c404ba94d9d91392cd956bbb8798f5e10264eb3b8971442a6a1fa7&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true'),
+              'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A64d6611c43389e0990df7171f57ab57cfb7441e0580975781693754d73114d06&amp;width=100%&amp;height=600&amp;lang=ru_RU&amp;scroll=true'),
             document.getElementById('YandexMap').appendChild(e);
         }
         document.addEventListener('DOMContentLoaded', function () {
@@ -1168,7 +1168,7 @@
           e(t, 'SWIPE_THRESHOLD', 20),
           e(t, 'TRANSITION_NONE', 'transition-none'),
           document.addEventListener('DOMContentLoaded', () => {
-            console.log('simple-slider'), new t('.itcss', { loop: !0, autoplay: !0, swipe: !0 });
+            new t('.itcss', { loop: !0, autoplay: !0, swipe: !0 });
           });
       },
       382: (e) => {
@@ -6621,10 +6621,8 @@
                 : (a.classList.remove('header--fixed'), (i.style.marginBottom = null));
           }
           document.documentElement.clientWidth <= 768
-            ? (console.log('<=768'),
-              a.classList.remove('header--fixed'),
-              window.removeEventListener('scroll', c))
-            : (console.log('++++'), window.addEventListener('scroll', c));
+            ? (a.classList.remove('header--fixed'), window.removeEventListener('scroll', c))
+            : window.addEventListener('scroll', c);
         },
         t = function (e) {
           let t = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : 250,
@@ -7809,7 +7807,10 @@
         a &&
           (new (E())('+7 (999) 999-99-99').mask(a),
           t.forEach((e) => {
-            '.phone' == e[0] &&
+            ('.phone' === e[0] ||
+              '.phone-1' === e[0] ||
+              '.phone-2' === e[0] ||
+              '.phone-3' === e[0]) &&
               e[1].push({
                 rule: 'function',
                 validator: function () {
@@ -7888,12 +7889,23 @@
         S = t(() => {
           e();
         });
-      window.addEventListener('resize', w), window.addEventListener('resize', S), n(), r().init();
-      const L = [
+      window.addEventListener('resize', w),
+        window.addEventListener('resize', S),
+        n(),
+        r().init(),
+        x('.form-1', [
+          ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+          ['.phone-1', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+        ]),
+        x('.form-1-2', [
+          ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+          ['.phone-1', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+        ]),
+        x('.form-2', [
           ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
           ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
-        ],
-        P = [
+        ]),
+        x('.form-3', [
           ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
           [
             '.email',
@@ -7902,16 +7914,19 @@
               { rule: 'email', errorMessage: 'Некорректный email' },
             ],
           ],
-          ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
-        ];
-      x('.form-1', L),
-        x('.form-2', [
-          ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
-          ['.phone', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+          ['.phone-3', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
         ]),
-        x('.form-3', P),
-        x('.form-4', P),
-        x('.form-1-2', L),
+        x('.form-4', [
+          ['.name', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+          [
+            '.email',
+            [
+              { rule: 'required', errorMessage: 'Обязательное поле' },
+              { rule: 'email', errorMessage: 'Некорректный email' },
+            ],
+          ],
+          ['.phone-3', [{ rule: 'required', errorMessage: 'Обязательное поле' }]],
+        ]),
         i(755);
     })();
 })();
