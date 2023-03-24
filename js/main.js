@@ -772,25 +772,27 @@
         'undefined' != typeof document && e(document);
       },
       407: () => {
-        function e(i) {
-          t(), i.currentTarget.removeEventListener(i.type, e);
+        if (document.getElementById('YandexMap')) {
+          function e(i) {
+            t(), i.currentTarget.removeEventListener(i.type, e);
+          }
+          function t() {
+            if (window.yandexMapDidInit) return !1;
+            window.yandexMapDidInit = !0;
+            const e = document.createElement('script');
+            (e.type = 'text/javascript'),
+              (e.async = !0),
+              (e.src =
+                'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A64d6611c43389e0990df7171f57ab57cfb7441e0580975781693754d73114d06&amp;width=100%&amp;height=600&amp;lang=ru_RU&amp;scroll=true'),
+              document.getElementById('YandexMap').appendChild(e);
+          }
+          document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(t, 5e3);
+          }),
+            document.addEventListener('scroll', e),
+            document.addEventListener('mousemove', e),
+            document.addEventListener('touchstart', e);
         }
-        function t() {
-          if (window.yandexMapDidInit) return !1;
-          window.yandexMapDidInit = !0;
-          const e = document.createElement('script');
-          (e.type = 'text/javascript'),
-            (e.async = !0),
-            (e.src =
-              'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A64d6611c43389e0990df7171f57ab57cfb7441e0580975781693754d73114d06&amp;width=100%&amp;height=600&amp;lang=ru_RU&amp;scroll=true'),
-            document.getElementById('YandexMap').appendChild(e);
-        }
-        document.addEventListener('DOMContentLoaded', function () {
-          setTimeout(t, 5e3);
-        }),
-          document.addEventListener('scroll', e),
-          document.addEventListener('mousemove', e),
-          document.addEventListener('touchstart', e);
       },
       212: () => {
         function e(e, t, i) {
@@ -1168,7 +1170,8 @@
           e(t, 'SWIPE_THRESHOLD', 20),
           e(t, 'TRANSITION_NONE', 'transition-none'),
           document.addEventListener('DOMContentLoaded', () => {
-            new t('.itcss', { loop: !0, autoplay: !0, swipe: !0 });
+            document.querySelector('.itcss') &&
+              new t('.itcss', { loop: !0, autoplay: !0, swipe: !0 });
           });
       },
       382: (e) => {
@@ -6646,7 +6649,7 @@
           document.querySelector(':root').style.setProperty('--header-top-height', `${t}px`);
           const i = document?.querySelector('.header__bottom').offsetHeight;
           document.querySelector(':root').style.setProperty('--header-bottom-height', `${i}px`);
-          const n = document?.querySelector('.submenu__item-active').offsetHeight;
+          const n = document?.querySelector('.submenu').offsetHeight;
           document.querySelector(':root').style.setProperty('--submenu-height', `${n}px`);
         };
       var a = i(711),
