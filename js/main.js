@@ -1,4 +1,3 @@
-/*! For license information please see main.js.LICENSE.txt */
 (() => {
   var e = {
       711: function (e) {
@@ -6617,9 +6616,9 @@
             e >= 5
               ? (a.classList.add('header--fill'), a.classList.remove('header--no-fill'))
               : (a.classList.remove('header--fill'), a.classList.add('header--no-fill')),
-              e >= l + o - r + 1
+              e >= l + o - r
                 ? (a.classList.add('header--fixed'),
-                  (i.style.marginBottom = `${s}px`),
+                  (i.style.marginBottom = `${s + 1}px`),
                   (i.style.marginTop = null))
                 : (a.classList.remove('header--fixed'), (i.style.marginBottom = null));
           }
@@ -7834,7 +7833,8 @@
               o = document.querySelector(i),
               s = document.querySelectorAll('[data-modal]'),
               l = document.querySelector('.header'),
-              c = (function () {
+              c = document.querySelector('.emergency'),
+              u = (function () {
                 let e = document.createElement('div');
                 (e.style.width = '50px'),
                   (e.style.height = '50px'),
@@ -7844,7 +7844,7 @@
                 let t = e.offsetWidth - e.clientWidth;
                 return e.remove(), t;
               })(),
-              u = document.querySelectorAll(`${t} input`);
+              d = document.querySelectorAll(`${t} input`);
             a.forEach((e) => {
               e.addEventListener('click', (e) => {
                 e.target && e.preventDefault(),
@@ -7853,8 +7853,9 @@
                   }),
                   (r.style.display = 'flex'),
                   (document.body.style.overflow = 'hidden'),
-                  (document.body.style.marginRight = `${c}px`),
-                  (l.style.paddingRight = `${c}px`);
+                  (document.body.style.marginRight = `${u}px`),
+                  (l.style.paddingRight = `${u}px`),
+                  (c.style.marginRight = `${u}px`);
               });
             }),
               o.addEventListener('click', () => {
@@ -7864,7 +7865,8 @@
                   (r.style.display = 'none'),
                   (document.body.style.overflow = ''),
                   (document.body.style.marginRight = '0px'),
-                  (l.style.paddingRight = '0px');
+                  (l.style.paddingRight = '0px'),
+                  (c.style.marginRight = '0px');
               }),
               r.addEventListener('click', (e) => {
                 e.target === r &&
@@ -7876,14 +7878,15 @@
                   (document.body.style.overflow = ''),
                   (document.body.style.marginRight = '0px'),
                   (l.style.paddingRight = '0px'),
-                  u.forEach((e) => {
+                  (c.style.marginRight = '0px'),
+                  d.forEach((e) => {
                     e.value = '';
                   }));
               });
           }
           e('.callback-btn', '.popup-consult', '.popup__close'),
-            e('.hero__btn-help', '.popup-help', '.popup-help-close'),
-            e('.hero__btn-question', '.popup-free', '.popup-free-close'),
+            e('.help-trigger', '.popup-help', '.popup-help-close'),
+            e('.consult-trigger', '.popup-free', '.popup-free-close'),
             e('.emergency', '.popup-emergency', '.popup-emergency .popup__close');
         })();
       let w = t(() => {

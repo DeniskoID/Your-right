@@ -1,1 +1,491 @@
-<!DOCTYPE html><html lang="ru" class="page"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="shortcut icon" href="favicon.ico" type="image/x-icon"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta name="theme-color" content="#111111"><title>Гражданские дела</title><link rel="preload" href="fonts/Bitter-Bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/Bitter-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="stylesheet" href="css/vendor.css"><link rel="stylesheet" href="css/main.css"><script defer="defer" src="js/main.js"></script></head><body class="page__body"><div class="site-container"><!-- fix для прижатия футера к низу, при фиксированном меню --><div class="fix" style="width: 100%; height: 1px; background-color: #f2f2f2;"></div><header class="header"><nav class="mobile-menu"><a class="header__logo" href="index.html"><img src="img/logo.png" alt="Логотип" width="55" height="42"></a><div class="mobile-menu__communication"><a class="mobile-menu__phone" href="tel:+88009999999"><img src="img/icon_phone-white.svg" alt=""></a></div><input type="checkbox" id="checkbox" class="mobile-menu__checkbox"> <label for="checkbox" class="mobile-menu__btn"><div class="mobile-menu__icon"></div></label><div class="mobile-menu__container"><ul class="mobile-menu__list"><li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Логин</a></li><li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Услуги</a></li><li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Эксперты</a></li><li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Истории</a></li><li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li></ul></div></nav><div class="header__top"><div class="container header__container-top"><a class="header__location" href="#"><svg width="15" height="23" viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7.5 22C12.1667 16.1741 14.5 11.807 14.5 8.89878C14.5 4.5364 11.366 1 7.5 1C3.63401 1 0.5 4.5364 0.5 8.89878C0.5 11.807 2.83333 16.1741 7.5 22Z" stroke="#1B2423" stroke-linecap="round" stroke-linejoin="round"/><path d="M7.49968 12.1281C9.11051 12.1281 10.4163 10.6628 10.4163 8.85519C10.4163 7.04761 9.11051 5.58228 7.49968 5.58228C5.88884 5.58228 4.58301 7.04761 4.58301 8.85519C4.58301 10.6628 5.88884 12.1281 7.49968 12.1281Z" stroke="#1B2423" stroke-linecap="round" stroke-linejoin="round"/></svg> <span class="nav__link">Севастополь</span> </a><!-- <button type="button" class="seconary-btn header__btn--order btn-reset">Заказать</button> --><div class="header__communication"><a class="header__phone" href="tel:+88009999999"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.6582 2.39543C15.7108 2.19909 15.8392 2.03166 16.0152 1.9299C16.1911 1.82814 16.4003 1.80037 16.5967 1.85269C18.4596 2.35361 20.1581 3.33526 21.5221 4.6993C22.8862 6.06334 23.8678 7.76186 24.3687 9.62473C24.3947 9.72199 24.4013 9.82342 24.3881 9.92322C24.3749 10.023 24.3421 10.1192 24.2917 10.2064C24.2413 10.2935 24.1743 10.3699 24.0944 10.4311C24.0144 10.4924 23.9232 10.5373 23.826 10.5632C23.7287 10.5892 23.6273 10.5958 23.5275 10.5826C23.4277 10.5694 23.3315 10.5366 23.2443 10.4862C23.1572 10.4358 23.0808 10.3688 23.0196 10.2889C22.9583 10.209 22.9135 10.1178 22.8875 10.0205C22.4565 8.41782 21.6119 6.95652 20.4384 5.783C19.2649 4.60947 17.8036 3.76493 16.2009 3.33395C16.0045 3.28147 15.837 3.1531 15.7352 2.9771C15.6334 2.80109 15.6057 2.59186 15.6582 2.39543ZM15.1425 7.28404C16.0521 7.52859 16.8815 8.00788 17.5475 8.67391C18.2135 9.33994 18.6928 10.1693 18.9374 11.0789C18.9899 11.2753 19.1183 11.4427 19.2943 11.5444C19.4703 11.6462 19.6794 11.6738 19.8758 11.6214C20.0722 11.5689 20.2397 11.4406 20.3415 11.2646C20.4433 11.0887 20.471 10.8795 20.4186 10.6831C20.1041 9.51337 19.4877 8.44679 18.6312 7.59025C17.7746 6.73372 16.7081 6.11731 15.5383 5.80277C15.3418 5.75029 15.1326 5.77799 14.9566 5.87977C14.7806 5.98156 14.6522 6.14909 14.5998 6.34552C14.5473 6.54195 14.575 6.75118 14.6768 6.92719C14.7785 7.10319 14.9461 7.23156 15.1425 7.28404ZM25.3622 19.8197C25.148 21.4842 24.3353 23.0139 23.0757 24.123C21.8161 25.2321 20.1958 25.8447 18.5175 25.8464C8.51374 25.8464 0.375 17.7077 0.375 7.70389C0.376699 6.0256 0.989308 4.40533 2.09839 3.14573C3.20748 1.88614 4.73718 1.07338 6.40176 0.859267C6.78603 0.813041 7.17495 0.892449 7.51034 1.08562C7.84574 1.27879 8.10959 1.57533 8.26245 1.93092L10.8293 7.92024C10.9459 8.1913 10.9934 8.48702 10.9677 8.78094C10.9419 9.07487 10.8437 9.35783 10.6819 9.60451L8.55641 12.8521C8.53238 12.8871 8.51779 12.9276 8.51405 12.9699C8.51032 13.0121 8.51755 13.0546 8.53507 13.0932C9.52133 15.1051 11.1526 16.7292 13.169 17.7063C13.2079 17.7237 13.2506 17.7307 13.2929 17.7267C13.3353 17.7226 13.3759 17.7076 13.4107 17.6831L16.6093 15.5502C16.8567 15.3846 17.1416 15.2836 17.438 15.2564C17.7344 15.2291 18.0329 15.2766 18.3063 15.3943L24.2904 17.959C24.646 18.1118 24.9426 18.3756 25.1358 18.711C25.329 19.0464 25.4084 19.4354 25.3622 19.8197ZM23.841 19.6275C23.8467 19.5734 23.8347 19.5189 23.8068 19.4721C23.7789 19.4253 23.7367 19.3889 23.6864 19.3681L17.7024 16.8035C17.6633 16.7868 17.6206 16.7801 17.5783 16.784C17.536 16.7879 17.4952 16.8022 17.4599 16.8258L14.2614 18.9588C14.0044 19.1307 13.7072 19.2329 13.3989 19.2554C13.0906 19.2779 12.7817 19.2198 12.5025 19.087C10.1767 17.9599 8.29502 16.0868 7.15737 13.7661C7.02396 13.4886 6.96455 13.1813 6.98491 12.8741C7.00526 12.5668 7.10468 12.2701 7.27353 12.0126L9.39898 8.76481C9.42213 8.72954 9.43616 8.68908 9.43984 8.64706C9.44352 8.60504 9.43673 8.56276 9.42006 8.524L6.8533 2.53493C6.83424 2.48931 6.80231 2.45024 6.76141 2.42247C6.72051 2.39471 6.6724 2.37946 6.62297 2.37859C6.61325 2.3786 6.60354 2.37922 6.5939 2.38046C5.29949 2.54716 4.11003 3.17939 3.24772 4.15905C2.38542 5.13871 1.90925 6.39879 1.90817 7.70389C1.91313 12.1074 3.66464 16.3292 6.77842 19.443C9.89221 22.5568 14.114 24.3083 18.5175 24.3132C19.8226 24.3122 21.0827 23.836 22.0624 22.9737C23.042 22.1114 23.6743 20.9219 23.841 19.6275Z" fill="#1B2423"/></svg> <span class="nav__link">8-800-999-99-99</span> </a><button class="seconary-btn header__btn--callback btn-reset callback-btn" data-graph-path="modal1">Обратный звонок</button></div></div></div><div class="header__bottom"><div class="container header__container-bottom"><div class="logo header__logo"><a class="logo__link" href="index.html"><img class="logo__image" src="img/logo.png" width="85" height="66" alt="Логотип"></a></div><nav class="header__nav"><ul class="header__nav-list list-reset"><li class="header__nav-item"><a class="nav__link" href="#">Услуги</a></li><li class="header__nav-item"><a class="nav__link" href="#">Эксперты</a></li><li class="header__nav-item"><a class="nav__link" href="#">Истории</a></li><li class="header__nav-item"><a class="nav__link" href="#">Контакты</a></li></ul></nav><button type="button" class="seconary-btn header__btn--login btn-reset">Войти</button></div></div></header><main class="main"><section class="hero"><div class="container hero__container"><div class="hero__content"><h1 class="hero__title" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-sine">Юридическая помощь для граждан</h1><div class="hero__subtitle" data-aos="fade-in" data-aos-delay="150" data-aos-duration="1000" data-aos-easing="ease-in-sine">Не ждите, пока станет слишко поздно! Получите юридическую помощь, уже сегодня</div><div class="hero__buttons-block"><button type="button" class="main-btn hero__btn-help main-btn--filled btn-reset">Получить помощь</button> <button type="button" class="main-btn hero__btn-question main-btn--stroked btn-reset">Бесплатная консультация</button></div></div><div class="hero__image-container"><picture><source srcset="img/content_images/hero_image-2.webp" type="image/webp"><img loading="lazy" src="img/content_images/hero_image-2.jpg" class="hero__image" width="470" height="470" alt="Коллеги дают пять"></picture></div></div></section><div class="submenu"><div class="container submenu__container"><nav class="submenu__nav"><ul class="submenu__items list-reset"><li class="submenu__item submenu__item-1"><a class="submenu__link" href="index.html">Главная</a></li><li class="submenu__item submenu__item-2 item-active"><a class="submenu__link" href="javascript:void(0)">Гражданские дела</a></li><li class="submenu__item submenu__item-3 @crim-active"><a class="submenu__link" href="#">Уголовное право</a></li><li class="submenu__item submenu__item-4 @corp-active"><a class="submenu__link" href="#">Корпоративное право</a></li><li class="submenu__item submenu__item-5 @it-active"><a class="submenu__link" href="#">Авторское право и IT</a></li><li class="submenu__item submenu__item-6 @med-active"><a class="submenu__link" href="#">Медицинское право</a></li></ul></nav></div></div><section class="service"><div class="container service__container"><h2 class="service__title h2-title">Право гражданам</h2><div class="service__content cards"><div class="cards__items"><div class="cards__item item-text"><p>Наша команда экспертов-юристов готова предоставить юридическое руководство по трудовым спорам, семейным спорам, земельным спорам, проблемам с застройщиком и проблемам с недвижимостью.</p><p>Имея многолетний опыт работы в отрасли, мы знаем, как с легкостью справиться с любым юридическим вопросом и предоставить вам решение, которое работает.</p><p>Наш сайт создан для того, чтобы сделать процесс максимально гладким и свободным от стресса.</p><p>Благодаря нашей комплексной юридической поддержке и передовым технологиям вы можете быть уверены, что ваше дело находится в надежных руках</p></div><div class="cards__item item-card item-1"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_1.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_1.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Бесплатная консультация</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-2"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_1.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_1.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Консультация</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-3"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_3.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_3.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Трудовые споры</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-4"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_4.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_4.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Земельные споры</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-5"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_5.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_5.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Защита прав потребителей</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-6"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_6.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_6.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Семейные споры</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-7"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_7.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_7.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Споры о недвижимости</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-8"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_8.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_8.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Взыскание долгов</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div><div class="cards__item item-card item-9"><div class="item-card__image"><picture><source srcset="img/civil-page_images/c-image_9.webp" type="image/webp"><img loading="lazy" src="img/civil-page_images/c-image_9.jpg" class="image" width="384" height="384" alt="Судейский молоток"></picture></div><div class="item-card__wrapper"><div class="item-card__title">Споры о наследстве</div><div class="item-card__btns"><button type="button" class="btn-reset service-btn service-btn--text">Получить помощь</button> <button class="btn-reset service-btn service-btn--icon"></button></div></div></div></div></div></div></section></main><footer class="footer"><div class="container footer__container"><div class="logo footer__logo"><a class="logo__link" href="#"><img class="logo__image" src="img/logo.png" width="85" height="66" alt="Логотип"></a></div><div class="footer__content"><nav class="footer__nav nav"><ul class="nav__list list-reset"><li class="nav__item"><a class="nav__link" href="#">Пресс-центр</a></li><li class="nav__item"><a class="nav__link" href="#">Банк документов</a></li><li class="nav__item"><a class="nav__link" href="#">Оплата услуг</a></li><li class="nav__item"><a class="nav__link" href="#">Стать партнером</a></li></ul></nav><div class="footer__submenu-wrapper"><div class="footer__sotial sotial"><div class="footer__title">Наши мессенджеры</div><ul class="sotial__icons-list list-reset"><li class="sotial__icons-item"><a class="sotial__link" href=""><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.8125 6.13745C22.6665 4.97986 21.3015 4.06204 19.797 3.43752C18.2926 2.813 16.6789 2.49428 15.05 2.49995C8.225 2.49995 2.6625 8.06245 2.6625 14.8875C2.6625 17.075 3.2375 19.2 4.3125 21.075L2.5625 27.5L9.125 25.775C10.9375 26.7625 12.975 27.2875 15.05 27.2875C21.875 27.2875 27.4375 21.725 27.4375 14.9C27.4375 11.5875 26.15 8.47495 23.8125 6.13745ZM15.05 25.1875C13.2 25.1875 11.3875 24.6875 9.8 23.75L9.425 23.525L5.525 24.55L6.5625 20.75L6.3125 20.3625C5.28468 18.7212 4.73893 16.824 4.7375 14.8875C4.7375 9.21245 9.3625 4.58745 15.0375 4.58745C17.7875 4.58745 20.375 5.66245 22.3125 7.61245C23.2719 8.56741 24.0321 9.70328 24.5492 10.9542C25.0664 12.2052 25.33 13.5463 25.325 14.9C25.35 20.575 20.725 25.1875 15.05 25.1875ZM20.7 17.4875C20.3875 17.3375 18.8625 16.5875 18.5875 16.475C18.3 16.375 18.1 16.325 17.8875 16.625C17.675 16.9375 17.0875 17.6375 16.9125 17.8375C16.7375 18.05 16.55 18.075 16.2375 17.9125C15.925 17.7625 14.925 17.425 13.75 16.375C12.825 15.55 12.2125 14.5375 12.025 14.225C11.85 13.9125 12 13.75 12.1625 13.5875C12.3 13.45 12.475 13.225 12.625 13.05C12.775 12.875 12.8375 12.7375 12.9375 12.5375C13.0375 12.325 12.9875 12.15 12.9125 12C12.8375 11.85 12.2125 10.325 11.9625 9.69995C11.7125 9.09995 11.45 9.17495 11.2625 9.16245H10.6625C10.45 9.16245 10.125 9.23745 9.8375 9.54995C9.5625 9.86245 8.7625 10.6125 8.7625 12.1375C8.7625 13.6625 9.875 15.1375 10.025 15.3375C10.175 15.55 12.2125 18.675 15.3125 20.0125C16.05 20.3375 16.625 20.525 17.075 20.6625C17.8125 20.9 18.4875 20.8625 19.025 20.7875C19.625 20.7 20.8625 20.0375 21.1125 19.3125C21.375 18.5875 21.375 17.975 21.2875 17.8375C21.2 17.7 21.0125 17.6375 20.7 17.4875Z" fill="#283841"/></svg></a></li><li class="sotial__icons-item"><a class="sotial__link" href="#"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 2.5C8.1 2.5 2.5 8.1 2.5 15C2.5 21.9 8.1 27.5 15 27.5C21.9 27.5 27.5 21.9 27.5 15C27.5 8.1 21.9 2.5 15 2.5ZM20.8 11C20.6125 12.975 19.8 17.775 19.3875 19.9875C19.2125 20.925 18.8625 21.2375 18.5375 21.275C17.8125 21.3375 17.2625 20.8 16.5625 20.3375C15.4625 19.6125 14.8375 19.1625 13.775 18.4625C12.5375 17.65 13.3375 17.2 14.05 16.475C14.2375 16.2875 17.4375 13.375 17.5 13.1125C17.5087 13.0727 17.5075 13.0315 17.4966 12.9923C17.4857 12.953 17.4654 12.9171 17.4375 12.8875C17.3625 12.825 17.2625 12.85 17.175 12.8625C17.0625 12.8875 15.3125 14.05 11.9 16.35C11.4 16.6875 10.95 16.8625 10.55 16.85C10.1 16.8375 9.25 16.6 8.6125 16.3875C7.825 16.1375 7.2125 16 7.2625 15.5625C7.2875 15.3375 7.6 15.1125 8.1875 14.875C11.8375 13.2875 14.2625 12.2375 15.475 11.7375C18.95 10.2875 19.6625 10.0375 20.1375 10.0375C20.2375 10.0375 20.475 10.0625 20.625 10.1875C20.75 10.2875 20.7875 10.425 20.8 10.525C20.7875 10.6 20.8125 10.825 20.8 11Z" fill="#283841"/></svg></a></li><li class="sotial__icons-item"><a class="sotial__link" href="#"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.95606 7.7525C9.72375 7.71869 9.48685 7.76545 9.28481 7.885H9.26731C8.79856 8.16 8.37606 8.50625 8.01606 8.91375C7.71606 9.26 7.55356 9.61 7.51106 9.9475C7.48606 10.1475 7.50356 10.35 7.56231 10.5412L7.58481 10.5538C7.92231 11.545 8.36231 12.4988 8.89981 13.3962C9.59288 14.6569 10.4458 15.8227 11.4373 16.865L11.4673 16.9075L11.5148 16.9425L11.5436 16.9763L11.5786 17.0062C12.6245 18.0008 13.7931 18.8577 15.0561 19.5563C16.4998 20.3425 17.3761 20.7137 17.9023 20.8687V20.8763C18.0561 20.9237 18.1961 20.945 18.3373 20.945C18.7855 20.9119 19.2097 20.7297 19.5423 20.4275C19.9486 20.0675 20.2923 19.6438 20.5598 19.1725V19.1638C20.8111 18.6888 20.7261 18.2413 20.3636 17.9375C19.6354 17.3013 18.8481 16.7362 18.0123 16.25C17.4523 15.9462 16.8836 16.13 16.6536 16.4375L16.1623 17.0575C15.9098 17.365 15.4523 17.3225 15.4523 17.3225L15.4398 17.33C12.0261 16.4588 11.1148 13.0025 11.1148 13.0025C11.1148 13.0025 11.0723 12.5325 11.3886 12.2925L12.0036 11.7975C12.2986 11.5575 12.5036 10.99 12.1873 10.43C11.7043 9.59345 11.1404 8.80634 10.5036 8.08C10.3647 7.90906 10.1699 7.79263 9.95356 7.75125L9.95606 7.7525ZM15.7248 6.25C15.5591 6.25 15.4001 6.31585 15.2829 6.43306C15.1657 6.55027 15.0998 6.70924 15.0998 6.875C15.0998 7.04076 15.1657 7.19973 15.2829 7.31694C15.4001 7.43415 15.5591 7.5 15.7248 7.5C17.3048 7.5 18.6173 8.01625 19.6561 9.00625C20.1898 9.5475 20.6061 10.1888 20.8786 10.8913C21.1523 11.595 21.2773 12.3463 21.2448 13.0988C21.2379 13.2645 21.297 13.4262 21.4093 13.5484C21.5216 13.6705 21.6778 13.743 21.8436 13.75C22.0093 13.757 22.1711 13.6978 22.2932 13.5855C22.4153 13.4732 22.4879 13.317 22.4948 13.1512C22.5336 12.2256 22.3799 11.302 22.0436 10.4387C21.7057 9.57142 21.1935 8.78265 20.5386 8.12125L20.5261 8.10875C19.2373 6.8775 17.6073 6.25 15.7248 6.25Z" fill="#283841"/><path d="M15.6816 8.30496C15.5159 8.30496 15.3569 8.37081 15.2397 8.48802C15.1225 8.60523 15.0566 8.7642 15.0566 8.92996C15.0566 9.09572 15.1225 9.25469 15.2397 9.3719C15.3569 9.48911 15.5159 9.55496 15.6816 9.55496H15.7029C16.8429 9.63621 17.6729 10.0162 18.2541 10.64C18.8504 11.2825 19.1591 12.0812 19.1354 13.0687C19.1316 13.2345 19.1938 13.395 19.3083 13.5149C19.4228 13.6348 19.5803 13.7043 19.746 13.7081C19.9118 13.7119 20.0723 13.6497 20.1922 13.5352C20.3121 13.4207 20.3816 13.2632 20.3854 13.0975C20.4154 11.8012 19.9979 10.6825 19.1704 9.78996V9.78746C18.3241 8.87996 17.1629 8.39996 15.7654 8.30621L15.7441 8.30371L15.6816 8.30496Z" fill="#283841"/><path d="M15.6575 10.3988C15.5738 10.3914 15.4896 10.4009 15.4097 10.4269C15.3298 10.4528 15.256 10.4945 15.1926 10.5496C15.1292 10.6047 15.0776 10.6719 15.0408 10.7474C15.004 10.8229 14.9828 10.905 14.9784 10.9888C14.974 11.0727 14.9866 11.1566 15.0154 11.2355C15.0441 11.3143 15.0885 11.3866 15.1458 11.448C15.2031 11.5094 15.2722 11.5585 15.3489 11.5926C15.4257 11.6267 15.5085 11.6449 15.5925 11.6463C16.115 11.6738 16.4487 11.8313 16.6587 12.0425C16.87 12.255 17.0275 12.5963 17.0562 13.13C17.0578 13.2139 17.0762 13.2966 17.1104 13.3732C17.1446 13.4498 17.1939 13.5187 17.2553 13.5759C17.3167 13.6331 17.389 13.6773 17.4678 13.7059C17.5467 13.7345 17.6305 13.747 17.7143 13.7425C17.798 13.7381 17.88 13.7168 17.9554 13.68C18.0308 13.6432 18.098 13.5916 18.153 13.5282C18.208 13.4649 18.2497 13.3911 18.2756 13.3113C18.3015 13.2315 18.3111 13.1473 18.3037 13.0638C18.2637 12.3138 18.0287 11.6513 17.5475 11.1638C17.0637 10.6763 16.405 10.4388 15.6575 10.3988Z" fill="#283841"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.83351 2.97995C12.8111 2.09083 16.9359 2.09083 20.9135 2.97995L21.3373 3.0737C22.5 3.33364 23.5679 3.91086 24.4223 4.74123C25.2768 5.5716 25.8842 6.6226 26.1773 7.77745C27.1869 11.7561 27.1869 15.9238 26.1773 19.9025C25.8842 21.0573 25.2768 22.1083 24.4223 22.9387C23.5679 23.769 22.5 24.3463 21.3373 24.6062L20.9123 24.6999C18.421 25.2571 15.8647 25.467 13.316 25.3237L9.99976 28.2912C9.87474 28.4031 9.72196 28.4795 9.55737 28.5122C9.39278 28.545 9.22242 28.5329 9.06407 28.4774C8.90572 28.4218 8.76518 28.3248 8.65712 28.1964C8.54907 28.068 8.47746 27.913 8.44976 27.7474L7.90101 24.4699C6.84874 24.1425 5.89802 23.5507 5.13972 22.7511C4.38142 21.9514 3.84088 20.9706 3.56976 19.9025C2.56008 15.9238 2.56008 11.7561 3.56976 7.77745C3.86279 6.6226 4.47026 5.5716 5.32468 4.74123C6.1791 3.91086 7.24701 3.33364 8.40976 3.0737L8.83351 2.97995ZM20.5048 4.8087C16.7964 3.97971 12.9507 3.97971 9.24226 4.8087L8.81726 4.9037C7.99316 5.08827 7.23634 5.49765 6.63086 6.08636C6.02537 6.67508 5.5949 7.42011 5.38726 8.2387C4.4544 11.9146 4.4544 15.7653 5.38726 19.4412C5.595 20.26 6.02565 21.0051 6.63138 21.5938C7.2371 22.1826 7.99418 22.5918 8.81851 22.7762L8.93101 22.8012C9.113 22.8419 9.27872 22.936 9.40698 23.0713C9.53523 23.2067 9.6202 23.3773 9.65101 23.5612L10.0185 25.7587L12.3585 23.6649C12.452 23.5811 12.5613 23.5169 12.68 23.4761C12.7988 23.4353 12.9245 23.4187 13.0498 23.4275C15.5486 23.6047 18.0599 23.4173 20.5048 22.8712L20.9285 22.7762C21.7528 22.5918 22.5099 22.1826 23.1156 21.5938C23.7214 21.0051 24.152 20.26 24.3598 19.4412C25.2923 15.7662 25.2923 11.915 24.3598 8.2387C24.152 7.41995 23.7214 6.67482 23.1156 6.08608C22.5099 5.49735 21.7528 5.08806 20.9285 4.9037L20.5048 4.8087Z" fill="#283841"/></svg></a></li></ul></div><div class="footer__pays pays"><div class="footer__title">Мы принимаем к оплате</div><ul class="pays__icons-list list-reset"><li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/mir_pay.png" alt="Мир" width="71" height="30"></li><li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/visa_pay.png" alt="Виза" width="67" height="30"></li><li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/mastercard_pay.png" alt="Мастеркард" width="39" height="30"></li></ul></div></div></div></div></footer><div class="emergency"><button class="emergency__btn btn-reset popup-big-btn" type="button"><img src="img/law_icon.svg" alt="Картинка весов"></button></div><div class="popup-consult" data-modal><div class="popup-consult__content"><button type="button" class="popup__close"><strong>×</strong></button><div class="popup-consult__form"><h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам перезвоним</span></h2><form class="form-1 popup-form form-consult" action="#"><label for="callback-name"><input id="callback-name" class="popup-form__control popup-form__input name" name="user_name" type="text" placeholder="Имя" autocomplete="off"></label> <label for="tel"><input id="tel" class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel" placeholder="Контактный телефон" autocomplete="off"></label> <button class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button><p class="form-consult__notice">Ваши данные конфиденциальны</p></form></div></div></div><div class="popup-emergency" data-modal><div class="popup-emergency__content"><button type="button" class="popup__close"><strong>×</strong></button><div class="popup-emergency__form"><h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам перезвоним</span></h2><form class="form-1-2 popup-form form-consult" action="#"><label for="callback-name1"><input id="callback-name1" class="popup-form__control popup-form__input name" name="user_name" type="text" placeholder="Имя"></label> <label for="tel"><input id="tel" class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel" placeholder="Контактный телефон" autocomplete="off" required></label> <button class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button><p class="form-consult__notice">Ваши данные конфиденциальны</p></form></div></div></div><div class="popup popup-free popup-big" data-modal><div class="popup-big__content"><button type="button" class="popup-free-close popup__close"><strong>×</strong></button><h2 class="form-title popup-form__title">Получить бесплатную консультация</h2><div class="popup-big__form"><form class="form-3 popup-form form-big" autocomplete="off" novalidate="novalidate"><div class="control-wrapper"><label class="input-label" for="popup-big__name"><input id="popup-big__name" class="popup-form__control popup-form__input name" autocomplete="off" type="text" placeholder="Ваше имя" name="Имя"></label></div><div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone" class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel" placeholder="Ваш телефон" name="Телефон"></label></div><div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email" class="popup-form__input popup-form__control email" autocomplete="off" type="email" placeholder="Ваша почта"></label></div><div class="control-wrapper"><label for="city-select"><select class="select popup-form__control popup-form__input" id="city-select"><option value="">Регион проживания</option><option value="Москва">Москва</option><option value="Севастополь">Севастополь</option><option value="Ростов">Ростов</option><option value="Краснодар">Краснодар</option></select></label></div><div class="control-wrapper"><label for="law-select"><select class="select popup-form__control popup-form__input" id="law-select"><option value="">Область права</option><option value="Гражданские дела">Гражданские дела</option><option value="Уголовное право">Уголовное право</option><option value="Корпоративное право">Корпоративное право</option><option value="Авторское право и IT">Авторское право и IT</option><option value="Медицинское право">Медицинское право</option></select></label></div><div class="control-wrapper"><label for="service-select"><select class="select popup-form__control popup-form__input" id="service-select"><option value="">Услуга</option><option value="Гражданские дела">Подай</option><option value="Уголовное право">Принеси</option><option value="Корпоративное право">Помоги</option><option value="Авторское право и IT">На халяву</option><option value="Медицинское право">Уйди</option></select></label></div><div class="control-wrapper"><label for="lawyer-select"><select class="select popup-form__control popup-form__input" id="lawyer-select"><option value="">Юрист</option><option value="Гражданские дела">Иванов</option><option value="Уголовное право">Петров</option><option value="Корпоративное право">Сидоров</option><option value="Авторское право и IT">Васильева</option><option value="Медицинское право">Кукушкина</option></select></label></div><div class="control-wrapper"><label for="date-select"><input class="popup-form__control popup-form__input" type="date" id="date-select" name="date" value="" min="2023-21-03" max="2023-05-01"></label></div><textarea class="popup-form__control popup-form__input" name="Заявка" id="" cols="30" rows="10" placeholder="краткое содержание заявки"></textarea><div class="control-wrapper"><button type="submit" class="popup-form__btn main-btn btn-reset">Отправить</button></div></form></div></div></div><div class="popup popup-help popup-big" data-modal><div class="popup-big__content"><button type="button" class="popup-help-close popup__close"><strong>×</strong></button><h2 class="form-title popup-form__title">Получить помощь</h2><div class="popup-big__form"><form class="form-4 popup-form form-big" autocomplete="off" novalidate="novalidate"><div class="control-wrapper"><label class="input-label" for="popup-big__name"><input id="popup-big__name" class="popup-form__control popup-form__input name" autocomplete="off" type="text" placeholder="Ваше имя" name="Имя"></label></div><div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone" class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel" placeholder="Ваш телефон" name="Телефон"></label></div><div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email" class="popup-form__input popup-form__control email" autocomplete="off" type="email" placeholder="Ваша почта"></label></div><div class="control-wrapper"><label for="city-select"><select class="select popup-form__control popup-form__input" id="city-select"><option value="">Регион проживания</option><option value="Москва">Москва</option><option value="Севастополь">Севастополь</option><option value="Ростов">Ростов</option><option value="Краснодар">Краснодар</option></select></label></div><div class="control-wrapper"><label for="law-select"><select class="select popup-form__control popup-form__input" id="law-select"><option value="">Область права</option><option value="Гражданские дела">Гражданские дела</option><option value="Уголовное право">Уголовное право</option><option value="Корпоративное право">Корпоративное право</option><option value="Авторское право и IT">Авторское право и IT</option><option value="Медицинское право">Медицинское право</option></select></label></div><div class="control-wrapper"><label for="service-select"><select class="select popup-form__control popup-form__input" id="service-select"><option value="">Услуга</option><option value="Гражданские дела">Подай</option><option value="Уголовное право">Принеси</option><option value="Корпоративное право">Помоги</option><option value="Авторское право и IT">На халяву</option><option value="Медицинское право">Уйди</option></select></label></div><div class="control-wrapper"><label for="lawyer-select"><select class="select popup-form__control popup-form__input" id="lawyer-select"><option value="">Юрист</option><option value="Гражданские дела">Иванов</option><option value="Уголовное право">Петров</option><option value="Корпоративное право">Сидоров</option><option value="Авторское право и IT">Васильева</option><option value="Медицинское право">Кукушкина</option></select></label></div><div class="control-wrapper"><label for="date-select"><input class="popup-form__control popup-form__input" type="date" id="date-select" name="date" value="" min="2023-21-03" max="2023-05-01"></label></div><textarea class="popup-form__control popup-form__input" name="Заявка" id="" cols="30" rows="10" placeholder="краткое содержание заявки"></textarea><div class="control-wrapper"><button type="submit" class="popup-form__btn main-btn btn-reset">Отправить</button></div></form></div></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Гражданские дела</title>
+  <link rel="preload" href="fonts/Bitter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Bitter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/vendor.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script defer="defer" src="js/main.js"></script>
+</head>
+
+<body class="page__body">
+  <div class="site-container"><!-- fix для прижатия футера к низу, при фиксированном меню -->
+    <div class="fix" style="width: 100%; height: 1px; background-color: #f2f2f2;"></div>
+    <header class="header">
+      <nav class="mobile-menu"><a class="header__logo" href="index.html"><img src="img/logo.png" alt="Логотип"
+            width="55" height="42"></a>
+        <div class="mobile-menu__communication"><a class="mobile-menu__phone" href="tel:+88009999999"><img
+              src="img/icon_phone-white.svg" alt=""></a></div><input type="checkbox" id="checkbox"
+          class="mobile-menu__checkbox"> <label for="checkbox" class="mobile-menu__btn">
+          <div class="mobile-menu__icon"></div>
+        </label>
+        <div class="mobile-menu__container">
+          <ul class="mobile-menu__list">
+            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Логин</a></li>
+            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Услуги</a></li>
+            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Эксперты</a></li>
+            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Истории</a></li>
+            <li class="mobile-menu__item"><a href="#" class="mobile-menu__link">Контакты</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="header__top">
+        <div class="container header__container-top"><a class="header__location" href="#"><svg width="15" height="23"
+              viewBox="0 0 15 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M7.5 22C12.1667 16.1741 14.5 11.807 14.5 8.89878C14.5 4.5364 11.366 1 7.5 1C3.63401 1 0.5 4.5364 0.5 8.89878C0.5 11.807 2.83333 16.1741 7.5 22Z"
+                stroke="#1B2423" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M7.49968 12.1281C9.11051 12.1281 10.4163 10.6628 10.4163 8.85519C10.4163 7.04761 9.11051 5.58228 7.49968 5.58228C5.88884 5.58228 4.58301 7.04761 4.58301 8.85519C4.58301 10.6628 5.88884 12.1281 7.49968 12.1281Z"
+                stroke="#1B2423" stroke-linecap="round" stroke-linejoin="round" />
+            </svg> <span class="nav__link">Севастополь</span>
+          </a><!-- <button type="button" class="seconary-btn header__btn--order btn-reset">Заказать</button> -->
+          <div class="header__communication"><a class="header__phone" href="tel:+88009999999"><svg width="26"
+                height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M15.6582 2.39543C15.7108 2.19909 15.8392 2.03166 16.0152 1.9299C16.1911 1.82814 16.4003 1.80037 16.5967 1.85269C18.4596 2.35361 20.1581 3.33526 21.5221 4.6993C22.8862 6.06334 23.8678 7.76186 24.3687 9.62473C24.3947 9.72199 24.4013 9.82342 24.3881 9.92322C24.3749 10.023 24.3421 10.1192 24.2917 10.2064C24.2413 10.2935 24.1743 10.3699 24.0944 10.4311C24.0144 10.4924 23.9232 10.5373 23.826 10.5632C23.7287 10.5892 23.6273 10.5958 23.5275 10.5826C23.4277 10.5694 23.3315 10.5366 23.2443 10.4862C23.1572 10.4358 23.0808 10.3688 23.0196 10.2889C22.9583 10.209 22.9135 10.1178 22.8875 10.0205C22.4565 8.41782 21.6119 6.95652 20.4384 5.783C19.2649 4.60947 17.8036 3.76493 16.2009 3.33395C16.0045 3.28147 15.837 3.1531 15.7352 2.9771C15.6334 2.80109 15.6057 2.59186 15.6582 2.39543ZM15.1425 7.28404C16.0521 7.52859 16.8815 8.00788 17.5475 8.67391C18.2135 9.33994 18.6928 10.1693 18.9374 11.0789C18.9899 11.2753 19.1183 11.4427 19.2943 11.5444C19.4703 11.6462 19.6794 11.6738 19.8758 11.6214C20.0722 11.5689 20.2397 11.4406 20.3415 11.2646C20.4433 11.0887 20.471 10.8795 20.4186 10.6831C20.1041 9.51337 19.4877 8.44679 18.6312 7.59025C17.7746 6.73372 16.7081 6.11731 15.5383 5.80277C15.3418 5.75029 15.1326 5.77799 14.9566 5.87977C14.7806 5.98156 14.6522 6.14909 14.5998 6.34552C14.5473 6.54195 14.575 6.75118 14.6768 6.92719C14.7785 7.10319 14.9461 7.23156 15.1425 7.28404ZM25.3622 19.8197C25.148 21.4842 24.3353 23.0139 23.0757 24.123C21.8161 25.2321 20.1958 25.8447 18.5175 25.8464C8.51374 25.8464 0.375 17.7077 0.375 7.70389C0.376699 6.0256 0.989308 4.40533 2.09839 3.14573C3.20748 1.88614 4.73718 1.07338 6.40176 0.859267C6.78603 0.813041 7.17495 0.892449 7.51034 1.08562C7.84574 1.27879 8.10959 1.57533 8.26245 1.93092L10.8293 7.92024C10.9459 8.1913 10.9934 8.48702 10.9677 8.78094C10.9419 9.07487 10.8437 9.35783 10.6819 9.60451L8.55641 12.8521C8.53238 12.8871 8.51779 12.9276 8.51405 12.9699C8.51032 13.0121 8.51755 13.0546 8.53507 13.0932C9.52133 15.1051 11.1526 16.7292 13.169 17.7063C13.2079 17.7237 13.2506 17.7307 13.2929 17.7267C13.3353 17.7226 13.3759 17.7076 13.4107 17.6831L16.6093 15.5502C16.8567 15.3846 17.1416 15.2836 17.438 15.2564C17.7344 15.2291 18.0329 15.2766 18.3063 15.3943L24.2904 17.959C24.646 18.1118 24.9426 18.3756 25.1358 18.711C25.329 19.0464 25.4084 19.4354 25.3622 19.8197ZM23.841 19.6275C23.8467 19.5734 23.8347 19.5189 23.8068 19.4721C23.7789 19.4253 23.7367 19.3889 23.6864 19.3681L17.7024 16.8035C17.6633 16.7868 17.6206 16.7801 17.5783 16.784C17.536 16.7879 17.4952 16.8022 17.4599 16.8258L14.2614 18.9588C14.0044 19.1307 13.7072 19.2329 13.3989 19.2554C13.0906 19.2779 12.7817 19.2198 12.5025 19.087C10.1767 17.9599 8.29502 16.0868 7.15737 13.7661C7.02396 13.4886 6.96455 13.1813 6.98491 12.8741C7.00526 12.5668 7.10468 12.2701 7.27353 12.0126L9.39898 8.76481C9.42213 8.72954 9.43616 8.68908 9.43984 8.64706C9.44352 8.60504 9.43673 8.56276 9.42006 8.524L6.8533 2.53493C6.83424 2.48931 6.80231 2.45024 6.76141 2.42247C6.72051 2.39471 6.6724 2.37946 6.62297 2.37859C6.61325 2.3786 6.60354 2.37922 6.5939 2.38046C5.29949 2.54716 4.11003 3.17939 3.24772 4.15905C2.38542 5.13871 1.90925 6.39879 1.90817 7.70389C1.91313 12.1074 3.66464 16.3292 6.77842 19.443C9.89221 22.5568 14.114 24.3083 18.5175 24.3132C19.8226 24.3122 21.0827 23.836 22.0624 22.9737C23.042 22.1114 23.6743 20.9219 23.841 19.6275Z"
+                  fill="#1B2423" />
+              </svg> <span class="nav__link">8-800-999-99-99</span> </a><button
+              class="seconary-btn header__btn--callback btn-reset callback-btn" data-graph-path="modal1">Обратный
+              звонок</button></div>
+        </div>
+      </div>
+      <div class="header__bottom">
+        <div class="container header__container-bottom">
+          <div class="logo header__logo"><a class="logo__link" href="index.html"><img class="logo__image"
+                src="img/logo.png" width="85" height="66" alt="Логотип"></a></div>
+          <nav class="header__nav">
+            <ul class="header__nav-list list-reset">
+              <li class="header__nav-item"><a class="nav__link" href="#">Услуги</a></li>
+              <li class="header__nav-item"><a class="nav__link" href="#">Эксперты</a></li>
+              <li class="header__nav-item"><a class="nav__link" href="#">Истории</a></li>
+              <li class="header__nav-item"><a class="nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav><button type="button" class="seconary-btn header__btn--login btn-reset">Войти</button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <div class="container hero__container">
+          <div class="hero__content">
+            <h1 class="hero__title" data-aos="fade-in" data-aos-delay="50" data-aos-duration="1000"
+              data-aos-easing="ease-in-sine">Юридическая помощь для граждан</h1>
+            <div class="hero__subtitle" data-aos="fade-in" data-aos-delay="150" data-aos-duration="1000"
+              data-aos-easing="ease-in-sine">Не ждите, пока станет слишко поздно! Получите юридическую помощь, уже
+              сегодня</div>
+            <div class="hero__buttons-block"><button type="button"
+                class="main-btn hero__btn-help main-btn--filled help-trigger btn-reset">Получить помощь</button> <button
+                type="button" class="main-btn hero__btn-question main-btn--stroked consult-trigger btn-reset">Бесплатная
+                консультация</button></div>
+          </div>
+          <div class="hero__image-container">
+            <picture>
+              <source srcset="img/content_images/hero_image-2.webp" type="image/webp"><img loading="lazy"
+                src="img/content_images/hero_image-2.jpg" class="hero__image" width="470" height="470"
+                alt="Коллеги дают пять">
+            </picture>
+          </div>
+        </div>
+      </section>
+      <div class="submenu">
+        <div class="container submenu__container">
+          <nav class="submenu__nav">
+            <ul class="submenu__items list-reset">
+              <li class="submenu__item submenu__item-1"><a class="submenu__link" href="index.html">Главная</a></li>
+              <li class="submenu__item submenu__item-2 item-active"><a class="submenu__link"
+                  href="javascript:void(0)">Гражданские дела</a></li>
+              <li class="submenu__item submenu__item-3 @crim-active"><a class="submenu__link" href="#">Уголовное
+                  право</a></li>
+              <li class="submenu__item submenu__item-4 @corp-active"><a class="submenu__link" href="#">Корпоративное
+                  право</a></li>
+              <li class="submenu__item submenu__item-5 @it-active"><a class="submenu__link" href="#">Авторское право и
+                  IT</a></li>
+              <li class="submenu__item submenu__item-6 @med-active"><a class="submenu__link" href="#">Медицинское
+                  право</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <section class="service">
+        <div class="container service__container">
+          <h2 class="service__title h2-title">Право гражданам</h2>
+          <div class="service__content cards">
+            <div class="cards__items">
+              <div class="cards__item item-text">
+                <p>Наша команда экспертов-юристов готова предоставить юридическое руководство по трудовым спорам,
+                  семейным спорам, земельным спорам, проблемам с застройщиком и проблемам с недвижимостью.</p>
+                <p>Имея многолетний опыт работы в отрасли, мы знаем, как с легкостью справиться с любым юридическим
+                  вопросом и предоставить вам решение, которое работает.</p>
+                <p>Наш сайт создан для того, чтобы сделать процесс максимально гладким и свободным от стресса.</p>
+                <p>Благодаря нашей комплексной юридической поддержке и передовым технологиям вы можете быть уверены, что
+                  ваше дело находится в надежных руках</p>
+              </div>
+              <div class="cards__item item-card item-1">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_1.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_1.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Бесплатная консультация</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-2">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_1.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_1.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Консультация</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-3">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_3.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_3.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Трудовые споры</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-4">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_4.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_4.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Земельные споры</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-5">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_5.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_5.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Защита прав потребителей</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-6">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_6.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_6.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Семейные споры</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-7">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_7.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_7.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Споры о недвижимости</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-8">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_8.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_8.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Взыскание долгов</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+              <div class="cards__item item-card item-9">
+                <div class="item-card__image">
+                  <picture>
+                    <source srcset="img/civil-page_images/c-image_9.webp" type="image/webp"><img loading="lazy"
+                      src="img/civil-page_images/c-image_9.jpg" class="image" width="384" height="384"
+                      alt="Судейский молоток">
+                  </picture>
+                </div>
+                <div class="item-card__wrapper">
+                  <div class="item-card__title">Споры о наследстве</div>
+                  <div class="item-card__btns"><button type="button"
+                      class="btn-reset service-btn service-btn--text help-trigger">Заказать услугу</button> <button
+                      class="btn-reset service-btn service-btn--icon"></button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="logo footer__logo"><a class="logo__link" href="#"><img class="logo__image" src="img/logo.png"
+              width="85" height="66" alt="Логотип"></a></div>
+        <div class="footer__content">
+          <nav class="footer__nav nav">
+            <ul class="nav__list list-reset">
+              <li class="nav__item"><a class="nav__link" href="#">Пресс-центр</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Банк документов</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Оплата услуг</a></li>
+              <li class="nav__item"><a class="nav__link" href="#">Стать партнером</a></li>
+            </ul>
+          </nav>
+          <div class="footer__submenu-wrapper">
+            <div class="footer__sotial sotial">
+              <div class="footer__title">Наши мессенджеры</div>
+              <ul class="sotial__icons-list list-reset">
+                <li class="sotial__icons-item"><a class="sotial__link" href=""><svg width="30" height="30"
+                      viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M23.8125 6.13745C22.6665 4.97986 21.3015 4.06204 19.797 3.43752C18.2926 2.813 16.6789 2.49428 15.05 2.49995C8.225 2.49995 2.6625 8.06245 2.6625 14.8875C2.6625 17.075 3.2375 19.2 4.3125 21.075L2.5625 27.5L9.125 25.775C10.9375 26.7625 12.975 27.2875 15.05 27.2875C21.875 27.2875 27.4375 21.725 27.4375 14.9C27.4375 11.5875 26.15 8.47495 23.8125 6.13745ZM15.05 25.1875C13.2 25.1875 11.3875 24.6875 9.8 23.75L9.425 23.525L5.525 24.55L6.5625 20.75L6.3125 20.3625C5.28468 18.7212 4.73893 16.824 4.7375 14.8875C4.7375 9.21245 9.3625 4.58745 15.0375 4.58745C17.7875 4.58745 20.375 5.66245 22.3125 7.61245C23.2719 8.56741 24.0321 9.70328 24.5492 10.9542C25.0664 12.2052 25.33 13.5463 25.325 14.9C25.35 20.575 20.725 25.1875 15.05 25.1875ZM20.7 17.4875C20.3875 17.3375 18.8625 16.5875 18.5875 16.475C18.3 16.375 18.1 16.325 17.8875 16.625C17.675 16.9375 17.0875 17.6375 16.9125 17.8375C16.7375 18.05 16.55 18.075 16.2375 17.9125C15.925 17.7625 14.925 17.425 13.75 16.375C12.825 15.55 12.2125 14.5375 12.025 14.225C11.85 13.9125 12 13.75 12.1625 13.5875C12.3 13.45 12.475 13.225 12.625 13.05C12.775 12.875 12.8375 12.7375 12.9375 12.5375C13.0375 12.325 12.9875 12.15 12.9125 12C12.8375 11.85 12.2125 10.325 11.9625 9.69995C11.7125 9.09995 11.45 9.17495 11.2625 9.16245H10.6625C10.45 9.16245 10.125 9.23745 9.8375 9.54995C9.5625 9.86245 8.7625 10.6125 8.7625 12.1375C8.7625 13.6625 9.875 15.1375 10.025 15.3375C10.175 15.55 12.2125 18.675 15.3125 20.0125C16.05 20.3375 16.625 20.525 17.075 20.6625C17.8125 20.9 18.4875 20.8625 19.025 20.7875C19.625 20.7 20.8625 20.0375 21.1125 19.3125C21.375 18.5875 21.375 17.975 21.2875 17.8375C21.2 17.7 21.0125 17.6375 20.7 17.4875Z"
+                        fill="#283841" />
+                    </svg></a></li>
+                <li class="sotial__icons-item"><a class="sotial__link" href="#"><svg width="30" height="30"
+                      viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M15 2.5C8.1 2.5 2.5 8.1 2.5 15C2.5 21.9 8.1 27.5 15 27.5C21.9 27.5 27.5 21.9 27.5 15C27.5 8.1 21.9 2.5 15 2.5ZM20.8 11C20.6125 12.975 19.8 17.775 19.3875 19.9875C19.2125 20.925 18.8625 21.2375 18.5375 21.275C17.8125 21.3375 17.2625 20.8 16.5625 20.3375C15.4625 19.6125 14.8375 19.1625 13.775 18.4625C12.5375 17.65 13.3375 17.2 14.05 16.475C14.2375 16.2875 17.4375 13.375 17.5 13.1125C17.5087 13.0727 17.5075 13.0315 17.4966 12.9923C17.4857 12.953 17.4654 12.9171 17.4375 12.8875C17.3625 12.825 17.2625 12.85 17.175 12.8625C17.0625 12.8875 15.3125 14.05 11.9 16.35C11.4 16.6875 10.95 16.8625 10.55 16.85C10.1 16.8375 9.25 16.6 8.6125 16.3875C7.825 16.1375 7.2125 16 7.2625 15.5625C7.2875 15.3375 7.6 15.1125 8.1875 14.875C11.8375 13.2875 14.2625 12.2375 15.475 11.7375C18.95 10.2875 19.6625 10.0375 20.1375 10.0375C20.2375 10.0375 20.475 10.0625 20.625 10.1875C20.75 10.2875 20.7875 10.425 20.8 10.525C20.7875 10.6 20.8125 10.825 20.8 11Z"
+                        fill="#283841" />
+                    </svg></a></li>
+                <li class="sotial__icons-item"><a class="sotial__link" href="#"><svg width="30" height="30"
+                      viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M9.95606 7.7525C9.72375 7.71869 9.48685 7.76545 9.28481 7.885H9.26731C8.79856 8.16 8.37606 8.50625 8.01606 8.91375C7.71606 9.26 7.55356 9.61 7.51106 9.9475C7.48606 10.1475 7.50356 10.35 7.56231 10.5412L7.58481 10.5538C7.92231 11.545 8.36231 12.4988 8.89981 13.3962C9.59288 14.6569 10.4458 15.8227 11.4373 16.865L11.4673 16.9075L11.5148 16.9425L11.5436 16.9763L11.5786 17.0062C12.6245 18.0008 13.7931 18.8577 15.0561 19.5563C16.4998 20.3425 17.3761 20.7137 17.9023 20.8687V20.8763C18.0561 20.9237 18.1961 20.945 18.3373 20.945C18.7855 20.9119 19.2097 20.7297 19.5423 20.4275C19.9486 20.0675 20.2923 19.6438 20.5598 19.1725V19.1638C20.8111 18.6888 20.7261 18.2413 20.3636 17.9375C19.6354 17.3013 18.8481 16.7362 18.0123 16.25C17.4523 15.9462 16.8836 16.13 16.6536 16.4375L16.1623 17.0575C15.9098 17.365 15.4523 17.3225 15.4523 17.3225L15.4398 17.33C12.0261 16.4588 11.1148 13.0025 11.1148 13.0025C11.1148 13.0025 11.0723 12.5325 11.3886 12.2925L12.0036 11.7975C12.2986 11.5575 12.5036 10.99 12.1873 10.43C11.7043 9.59345 11.1404 8.80634 10.5036 8.08C10.3647 7.90906 10.1699 7.79263 9.95356 7.75125L9.95606 7.7525ZM15.7248 6.25C15.5591 6.25 15.4001 6.31585 15.2829 6.43306C15.1657 6.55027 15.0998 6.70924 15.0998 6.875C15.0998 7.04076 15.1657 7.19973 15.2829 7.31694C15.4001 7.43415 15.5591 7.5 15.7248 7.5C17.3048 7.5 18.6173 8.01625 19.6561 9.00625C20.1898 9.5475 20.6061 10.1888 20.8786 10.8913C21.1523 11.595 21.2773 12.3463 21.2448 13.0988C21.2379 13.2645 21.297 13.4262 21.4093 13.5484C21.5216 13.6705 21.6778 13.743 21.8436 13.75C22.0093 13.757 22.1711 13.6978 22.2932 13.5855C22.4153 13.4732 22.4879 13.317 22.4948 13.1512C22.5336 12.2256 22.3799 11.302 22.0436 10.4387C21.7057 9.57142 21.1935 8.78265 20.5386 8.12125L20.5261 8.10875C19.2373 6.8775 17.6073 6.25 15.7248 6.25Z"
+                        fill="#283841" />
+                      <path
+                        d="M15.6816 8.30496C15.5159 8.30496 15.3569 8.37081 15.2397 8.48802C15.1225 8.60523 15.0566 8.7642 15.0566 8.92996C15.0566 9.09572 15.1225 9.25469 15.2397 9.3719C15.3569 9.48911 15.5159 9.55496 15.6816 9.55496H15.7029C16.8429 9.63621 17.6729 10.0162 18.2541 10.64C18.8504 11.2825 19.1591 12.0812 19.1354 13.0687C19.1316 13.2345 19.1938 13.395 19.3083 13.5149C19.4228 13.6348 19.5803 13.7043 19.746 13.7081C19.9118 13.7119 20.0723 13.6497 20.1922 13.5352C20.3121 13.4207 20.3816 13.2632 20.3854 13.0975C20.4154 11.8012 19.9979 10.6825 19.1704 9.78996V9.78746C18.3241 8.87996 17.1629 8.39996 15.7654 8.30621L15.7441 8.30371L15.6816 8.30496Z"
+                        fill="#283841" />
+                      <path
+                        d="M15.6575 10.3988C15.5738 10.3914 15.4896 10.4009 15.4097 10.4269C15.3298 10.4528 15.256 10.4945 15.1926 10.5496C15.1292 10.6047 15.0776 10.6719 15.0408 10.7474C15.004 10.8229 14.9828 10.905 14.9784 10.9888C14.974 11.0727 14.9866 11.1566 15.0154 11.2355C15.0441 11.3143 15.0885 11.3866 15.1458 11.448C15.2031 11.5094 15.2722 11.5585 15.3489 11.5926C15.4257 11.6267 15.5085 11.6449 15.5925 11.6463C16.115 11.6738 16.4487 11.8313 16.6587 12.0425C16.87 12.255 17.0275 12.5963 17.0562 13.13C17.0578 13.2139 17.0762 13.2966 17.1104 13.3732C17.1446 13.4498 17.1939 13.5187 17.2553 13.5759C17.3167 13.6331 17.389 13.6773 17.4678 13.7059C17.5467 13.7345 17.6305 13.747 17.7143 13.7425C17.798 13.7381 17.88 13.7168 17.9554 13.68C18.0308 13.6432 18.098 13.5916 18.153 13.5282C18.208 13.4649 18.2497 13.3911 18.2756 13.3113C18.3015 13.2315 18.3111 13.1473 18.3037 13.0638C18.2637 12.3138 18.0287 11.6513 17.5475 11.1638C17.0637 10.6763 16.405 10.4388 15.6575 10.3988Z"
+                        fill="#283841" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.83351 2.97995C12.8111 2.09083 16.9359 2.09083 20.9135 2.97995L21.3373 3.0737C22.5 3.33364 23.5679 3.91086 24.4223 4.74123C25.2768 5.5716 25.8842 6.6226 26.1773 7.77745C27.1869 11.7561 27.1869 15.9238 26.1773 19.9025C25.8842 21.0573 25.2768 22.1083 24.4223 22.9387C23.5679 23.769 22.5 24.3463 21.3373 24.6062L20.9123 24.6999C18.421 25.2571 15.8647 25.467 13.316 25.3237L9.99976 28.2912C9.87474 28.4031 9.72196 28.4795 9.55737 28.5122C9.39278 28.545 9.22242 28.5329 9.06407 28.4774C8.90572 28.4218 8.76518 28.3248 8.65712 28.1964C8.54907 28.068 8.47746 27.913 8.44976 27.7474L7.90101 24.4699C6.84874 24.1425 5.89802 23.5507 5.13972 22.7511C4.38142 21.9514 3.84088 20.9706 3.56976 19.9025C2.56008 15.9238 2.56008 11.7561 3.56976 7.77745C3.86279 6.6226 4.47026 5.5716 5.32468 4.74123C6.1791 3.91086 7.24701 3.33364 8.40976 3.0737L8.83351 2.97995ZM20.5048 4.8087C16.7964 3.97971 12.9507 3.97971 9.24226 4.8087L8.81726 4.9037C7.99316 5.08827 7.23634 5.49765 6.63086 6.08636C6.02537 6.67508 5.5949 7.42011 5.38726 8.2387C4.4544 11.9146 4.4544 15.7653 5.38726 19.4412C5.595 20.26 6.02565 21.0051 6.63138 21.5938C7.2371 22.1826 7.99418 22.5918 8.81851 22.7762L8.93101 22.8012C9.113 22.8419 9.27872 22.936 9.40698 23.0713C9.53523 23.2067 9.6202 23.3773 9.65101 23.5612L10.0185 25.7587L12.3585 23.6649C12.452 23.5811 12.5613 23.5169 12.68 23.4761C12.7988 23.4353 12.9245 23.4187 13.0498 23.4275C15.5486 23.6047 18.0599 23.4173 20.5048 22.8712L20.9285 22.7762C21.7528 22.5918 22.5099 22.1826 23.1156 21.5938C23.7214 21.0051 24.152 20.26 24.3598 19.4412C25.2923 15.7662 25.2923 11.915 24.3598 8.2387C24.152 7.41995 23.7214 6.67482 23.1156 6.08608C22.5099 5.49735 21.7528 5.08806 20.9285 4.9037L20.5048 4.8087Z"
+                        fill="#283841" />
+                    </svg></a></li>
+              </ul>
+            </div>
+            <div class="footer__pays pays">
+              <div class="footer__title">Мы принимаем к оплате</div>
+              <ul class="pays__icons-list list-reset">
+                <li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/mir_pay.png" alt="Мир"
+                    width="71" height="30"></li>
+                <li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/visa_pay.png" alt="Виза"
+                    width="67" height="30"></li>
+                <li class="pays__icons-item"><img class="pays__image" src="img/pay_icons/mastercard_pay.png"
+                    alt="Мастеркард" width="39" height="30"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="emergency"><button class="emergency__btn btn-reset popup-big-btn" type="button"><img
+          src="img/law_icon.svg" alt="Картинка весов"></button></div>
+    <div class="popup-consult" data-modal>
+      <div class="popup-consult__content"><button type="button" class="popup__close"><strong>×</strong></button>
+        <div class="popup-consult__form">
+          <h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам
+              перезвоним</span></h2>
+          <form class="form-1 popup-form form-consult" action="#"><label for="callback-name"><input id="callback-name"
+                class="popup-form__control popup-form__input name" name="user_name" type="text" placeholder="Имя"
+                autocomplete="off"></label> <label for="tel"><input id="tel"
+                class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel"
+                placeholder="Контактный телефон" autocomplete="off"></label> <button
+              class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button>
+            <p class="form-consult__notice">Ваши данные конфиденциальны</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup-emergency" data-modal>
+      <div class="popup-emergency__content"><button type="button" class="popup__close"><strong>×</strong></button>
+        <div class="popup-emergency__form">
+          <h2 class="form-title popup-form__title">Оставьте свой номер<br><span class="form-subtitle">мы вам
+              перезвоним</span></h2>
+          <form class="form-1-2 popup-form form-consult" action="#"><label for="callback-name1"><input
+                id="callback-name1" class="popup-form__control popup-form__input name" name="user_name" type="text"
+                placeholder="Имя"></label> <label for="tel"><input id="tel"
+                class="popup-form__control phone-1 popup-form__input" name="user_phone" type="tel"
+                placeholder="Контактный телефон" autocomplete="off" required></label> <button
+              class="popup-form__btn main-btn btn-reset" name="submit" type="submit">Отправить</button>
+            <p class="form-consult__notice">Ваши данные конфиденциальны</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-free popup-big" data-modal>
+      <div class="popup-big__content"><button type="button"
+          class="popup-free-close popup__close"><strong>×</strong></button>
+        <h2 class="form-title popup-form__title">Получить бесплатную консультация</h2>
+        <div class="popup-big__form">
+          <form class="form-3 popup-form form-big" autocomplete="off" novalidate="novalidate">
+            <div class="control-wrapper"><label class="input-label" for="popup-big__name"><input id="popup-big__name"
+                  class="popup-form__control popup-form__input name" autocomplete="off" type="text"
+                  placeholder="Ваше имя" name="Имя"></label></div>
+            <div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone"
+                  class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel"
+                  placeholder="Ваш телефон" name="Телефон"></label></div>
+            <div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email"
+                  class="popup-form__input popup-form__control email" autocomplete="off" type="email"
+                  placeholder="Ваша почта"></label></div>
+            <div class="control-wrapper"><label for="city-select"><select
+                  class="select popup-form__control popup-form__input" id="city-select">
+                  <option value="">Регион проживания</option>
+                  <option value="Москва">Москва</option>
+                  <option value="Севастополь">Севастополь</option>
+                  <option value="Ростов">Ростов</option>
+                  <option value="Краснодар">Краснодар</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="law-select"><select
+                  class="select popup-form__control popup-form__input" id="law-select">
+                  <option value="">Область права</option>
+                  <option value="Гражданские дела">Гражданские дела</option>
+                  <option value="Уголовное право">Уголовное право</option>
+                  <option value="Корпоративное право">Корпоративное право</option>
+                  <option value="Авторское право и IT">Авторское право и IT</option>
+                  <option value="Медицинское право">Медицинское право</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="service-select"><select
+                  class="select popup-form__control popup-form__input" id="service-select">
+                  <option value="">Услуга</option>
+                  <option value="Гражданские дела">Подай</option>
+                  <option value="Уголовное право">Принеси</option>
+                  <option value="Корпоративное право">Помоги</option>
+                  <option value="Авторское право и IT">На халяву</option>
+                  <option value="Медицинское право">Уйди</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="lawyer-select"><select
+                  class="select popup-form__control popup-form__input" id="lawyer-select">
+                  <option value="">Юрист</option>
+                  <option value="Гражданские дела">Иванов</option>
+                  <option value="Уголовное право">Петров</option>
+                  <option value="Корпоративное право">Сидоров</option>
+                  <option value="Авторское право и IT">Васильева</option>
+                  <option value="Медицинское право">Кукушкина</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="date-select"><input class="popup-form__control popup-form__input"
+                  type="date" id="date-select" name="date" value="" min="2023-21-03" max="2023-05-01"></label></div>
+            <textarea class="popup-form__control popup-form__input" name="Заявка" id="" cols="30" rows="10"
+              placeholder="краткое содержание заявки"></textarea>
+            <div class="control-wrapper"><button type="submit"
+                class="popup-form__btn main-btn btn-reset">Отправить</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-help popup-big" data-modal>
+      <div class="popup-big__content"><button type="button"
+          class="popup-help-close popup__close"><strong>×</strong></button>
+        <h2 class="form-title popup-form__title">Получить помощь</h2>
+        <div class="popup-big__form">
+          <form class="form-4 popup-form form-big" autocomplete="off" novalidate="novalidate">
+            <div class="control-wrapper"><label class="input-label" for="popup-big__name"><input id="popup-big__name"
+                  class="popup-form__control popup-form__input name" autocomplete="off" type="text"
+                  placeholder="Ваше имя" name="Имя"></label></div>
+            <div class="control-wrapper"><label for="popup-big__phone"><input id="popup-big__phone"
+                  class="popup-form__control popup-form__input phone-3" autocomplete="off" type="tel"
+                  placeholder="Ваш телефон" name="Телефон"></label></div>
+            <div class="control-wrapper"><label for="popup-big__email"><input id="popup-big__email"
+                  class="popup-form__input popup-form__control email" autocomplete="off" type="email"
+                  placeholder="Ваша почта"></label></div>
+            <div class="control-wrapper"><label for="city-select"><select
+                  class="select popup-form__control popup-form__input" id="city-select">
+                  <option value="">Регион проживания</option>
+                  <option value="Москва">Москва</option>
+                  <option value="Севастополь">Севастополь</option>
+                  <option value="Ростов">Ростов</option>
+                  <option value="Краснодар">Краснодар</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="law-select"><select
+                  class="select popup-form__control popup-form__input" id="law-select">
+                  <option value="">Область права</option>
+                  <option value="Гражданские дела">Гражданские дела</option>
+                  <option value="Уголовное право">Уголовное право</option>
+                  <option value="Корпоративное право">Корпоративное право</option>
+                  <option value="Авторское право и IT">Авторское право и IT</option>
+                  <option value="Медицинское право">Медицинское право</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="service-select"><select
+                  class="select popup-form__control popup-form__input" id="service-select">
+                  <option value="">Услуга</option>
+                  <option value="Гражданские дела">Подай</option>
+                  <option value="Уголовное право">Принеси</option>
+                  <option value="Корпоративное право">Помоги</option>
+                  <option value="Авторское право и IT">На халяву</option>
+                  <option value="Медицинское право">Уйди</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="lawyer-select"><select
+                  class="select popup-form__control popup-form__input" id="lawyer-select">
+                  <option value="">Юрист</option>
+                  <option value="Гражданские дела">Иванов</option>
+                  <option value="Уголовное право">Петров</option>
+                  <option value="Корпоративное право">Сидоров</option>
+                  <option value="Авторское право и IT">Васильева</option>
+                  <option value="Медицинское право">Кукушкина</option>
+                </select></label></div>
+            <div class="control-wrapper"><label for="date-select"><input class="popup-form__control popup-form__input"
+                  type="date" id="date-select" name="date" value="" min="2023-21-03" max="2023-05-01"></label></div>
+            <textarea class="popup-form__control popup-form__input" name="Заявка" id="" cols="30" rows="10"
+              placeholder="краткое содержание заявки"></textarea>
+            <div class="control-wrapper"><button type="submit"
+                class="popup-form__btn main-btn btn-reset">Отправить</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
