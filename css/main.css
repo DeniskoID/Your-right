@@ -855,10 +855,11 @@ a {
 }
 .submenu__nav {
   position: relative;
-  height: 100px;
+  height: 105px;
   width: 100%;
   overflow-x: scroll;
-  overflow-y: auto;
+  overflow-y: hidden;
+  white-space: wrap;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s;
@@ -873,7 +874,6 @@ a {
 .submenu__nav::-webkit-scrollbar {
   display: none;
 }
-
 .submenu__nav.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
